@@ -26,8 +26,8 @@ class Login extends Component {
                 <View style={styles.main}>
                     <View style={styles.languages}>
                         <Text style={[styles.language,styles.link,{fontSize:12}]}>English</Text>
-                        <Text style={[styles.language,styles.link,{fontSize:12}]}>*Indonesian</Text>
-                        <Text style={[styles.language,styles.link,{fontSize:12}]}>*Others</Text>
+                        <Text style={[styles.language,styles.link,{fontSize:12}]}>&bull; Indonesian</Text>
+                        <Text style={[styles.language,styles.link,{fontSize:12}]}>&bull; Others</Text>
                     </View>
                     
                     <View style={styles.formWrapper}>

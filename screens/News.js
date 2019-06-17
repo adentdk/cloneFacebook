@@ -6,6 +6,7 @@ import {
   View,
   StyleSheet,
   Image,
+  ScrollView,
 } from 'react-native';
 
 class News extends Component {
@@ -13,10 +14,13 @@ class News extends Component {
     let camera = require('../img/camera.png');
     let messenger = require('../img/messenger.png');
     let newsFeed = require('../img/newsFeed.png');
-    let  friends = require('../img/friends.png');
+    let friends = require('../img/friends.png');
     let notification = require('../img/notification.png');
     let menu = require('../img/list.png');
-
+    let user = require('../img/user.png');
+    let arkademy = require('../img/arkademy.jpg');
+    let world = require('../img/world.png');
+    let newsFeed1 = require('../img/newsFeed1.jpg');
     return (
       <View style={styles.container}>
 
@@ -25,7 +29,7 @@ class News extends Component {
             <Image source={camera} style={styles.icon}/>
           </View>
           <View style={styles.search}>
-            <TextInput style={styles.textInput} placeholder="search something"/>
+            <TextInput style={styles.textInput} placeholder="Search" placeholderTextColor="#dedede"/>
           </View>
           <View style={styles.messenger}>
             <Image source={messenger} style={styles.icon}/>
@@ -33,13 +37,13 @@ class News extends Component {
         </View>
 
         <View style={styles.navigation}>
-          <View style={styles.newsFeed}>
+          <View style={styles.menu}>
             <Image source={newsFeed} style={styles.icon}/>
           </View>
-          <View style={styles.friends}>
+          <View style={styles.menu}>
             <Image source={friends} style={styles.icon}/>
           </View>
-          <View style={styles.notification}>
+          <View style={styles.menu}>
             <Image source={notification} style={styles.icon}/>
           </View>
           <View style={styles.menu}>
@@ -47,19 +51,43 @@ class News extends Component {
           </View>
         </View>
 
-        <View style={styles.formStatus}>
-          <TextInput placeholder="what's on your mind?" style={styles.textInput}/>
-        </View>
+        <ScrollView>
 
-        <View style={styles.story}>
-          <View style={styles.storyItems}></View>
-          <View style={styles.storyItems}></View>
-          <View style={styles.storyItems}></View>
-        </View>
+          <View style={styles.formStatus}>
+            <Image style={styles.profileFoto} source={user}/>
+            <TextInput placeholder="what's on your mind?" style={[styles.textInput,{maxWidth:'80%'}]}/>
+          </View>
 
-        <View style={styles.content}>
-        </View>
-      </View>
+          <ScrollView horizontal={true}>
+            <View style={styles.story}>
+              <View style={styles.storyItems}></View>
+              <View style={styles.storyItems}></View>
+              <View style={styles.storyItems}></View>
+              <View style={styles.storyItems}></View>
+            </View>
+          </ScrollView>
+
+          <View style={styles.newsFeed}>
+            <View style={styles.newsFeedItems}>
+              <View style={styles.newsFeedItemsHeader}>
+                <Image source={arkademy} style={[styles.profileFoto]}/>
+                <View>
+                  <Text style={[styles.textBold,{marginTop:6,minWidth:'70%'}]}>Arkademy</Text>
+                  <Text>2 hrs &bull; <Image source={world} style={{width:10,height:10,borderRadius:5}}/></Text>
+                </View>
+                <Text style={{marginTop:12}}>&bull; &bull; &bull;</Text>
+              </View>
+              <View style={styles.newsFeedItemsBody}>
+                <Text>Bootcamp hari ketiga !</Text>
+                <Image source={newsFeed1} style={{maxWidth: '100%',maxHeight:200}}/>
+              </View>
+              <View style={styles.newsFeedItemsFooter}>
+                <Text>Footer</Text>
+              </View>
+            </View>
+          </View>
+          </ScrollView>
+    </View>        
     );
   }
 }
@@ -68,11 +96,10 @@ export default News;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#aaaaaa',
+    backgroundColor: '#dedede',
   },
   header: {
-    flex : 2,
+    height: 50,
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
@@ -92,23 +119,11 @@ const styles = StyleSheet.create({
 
 
   navigation: {
-    flex: 2,
+    height:50,
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
     backgroundColor: '#ffffff',
-  },
-  newsFeed: {
-    flex: 1,
-    alignItems: 'center',
-  },
-  friends: {
-    flex: 1,
-    alignItems: 'center',
-  },
-  notification: {
-    flex: 1,
-    alignItems: 'center',
   },
   menu: {
     flex: 1,
@@ -116,41 +131,56 @@ const styles = StyleSheet.create({
   },
 
   formStatus: {
-    flex: 2,
+    height: 55,
+    padding: 5,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#ffffff',
     paddingBottom: 10,
+    flexDirection: 'row',
+    marginTop: 1,
   },
 
   story: {
-    flex: 4,
-    borderColor: '#aaaaaa',
-    borderWidth: 1,
+    height: 170,
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
     backgroundColor: '#ffffff',
     paddingBottom: 10,
+    marginTop: 7,
   },
   storyItems: {
+    backgroundColor: '#bebebe',
     width: 100,
-    height: 100,
-    borderRadius: 50,
+    height: 150,
+    marginRight: 5,
+    borderRadius: 10,
     borderWidth: 1,
     borderColor: '#3B5999',
   },
 
-  content: {
-    flex: 8,
-    borderColor: '#aaaaaa',
-    borderWidth: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+  newsFeed: {
+    flexDirection: 'row',
+    backgroundColor: '#fff',
+    marginTop: 7,
+  },
+  newsFeedItems: {
+    flexDirection: 'column',
+    justifyContent:'flex-start',
+  },
+  newsFeedItemsHeader: {
     flexDirection: 'row',
   },
+  newsFeedItemsBody: {
+    maxHeight:'100%',
+    padding:10,
+  }, 
 
 
+  textBold:{
+    fontWeight: 'bold',
+  },
   textInput: {
     borderWidth: 1,
     height: 40,
@@ -161,5 +191,13 @@ const styles = StyleSheet.create({
   icon: {
     width:20,
     height:20,
+  },
+
+  profileFoto: {
+    width: 50,
+    height:50,
+    borderRadius: 25,
+    marginLeft: 5,
+    marginRight: 5,
   },
 });
