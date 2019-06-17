@@ -15,21 +15,30 @@ class News extends Component {
     let messenger = require('../img/messenger.png');
     let newsFeed = require('../img/newsFeed.png');
     let friends = require('../img/friends.png');
+    let fbVideo = require('../img/fbVideo.png');
+    let userIcon = require('../img/userIcon.png');
     let notification = require('../img/notification.png');
     let menu = require('../img/list.png');
     let user = require('../img/user.png');
+    let photo = require('../img/Photo.png');
     let arkademy = require('../img/arkademy.jpg');
     let world = require('../img/world.png');
     let newsFeed1 = require('../img/newsFeed1.jpg');
+    let like = require('../img/like.png');
+    let likeAlt = require('../img/likeAlt.png');
+    let commentAlt = require('../img/commentAlt.png');
+    let shareAlt = require('../img/shareAlt.png');
+
+    let data = require('../data/data.json');
+
     return (
       <View style={styles.container}>
-
         <View style={styles.header}>
           <View style={styles.camera}>
             <Image source={camera} style={styles.icon}/>
           </View>
           <View style={styles.search}>
-            <TextInput style={styles.textInput} placeholder="Search" placeholderTextColor="#dedede"/>
+            <TextInput style={[styles.textInput,{borderRadius:0, borderWidth:0}]} placeholder="Search" placeholderTextColor="#dedede" underlineColorAndroid="#eee"/>
           </View>
           <View style={styles.messenger}>
             <Image source={messenger} style={styles.icon}/>
@@ -44,6 +53,12 @@ class News extends Component {
             <Image source={friends} style={styles.icon}/>
           </View>
           <View style={styles.menu}>
+            <Image source={fbVideo} style={styles.icon}/>
+          </View>
+          <View style={styles.menu}>
+            <Image source={userIcon} style={styles.icon}/>
+          </View>
+          <View style={styles.menu}>
             <Image source={notification} style={styles.icon}/>
           </View>
           <View style={styles.menu}>
@@ -52,11 +67,6 @@ class News extends Component {
         </View>
 
         <ScrollView>
-
-          <View style={styles.formStatus}>
-            <Image style={styles.profileFoto} source={user}/>
-            <TextInput placeholder="what's on your mind?" style={[styles.textInput,{maxWidth:'80%'}]}/>
-          </View>
 
           <ScrollView horizontal={true}>
             <View style={styles.story}>
@@ -67,27 +77,51 @@ class News extends Component {
             </View>
           </ScrollView>
 
+          <View style={styles.formStatus}>
+            <Image style={styles.profileFoto} source={user}/>
+            <TextInput placeholder="What's on your mind?" placeholderTextColor="#666" style={[styles.textInput,{maxWidth:'60%',color:'#111'}]}/>
+            <View style={{marginLeft:5}}>
+              <Image style={{width:30,height:30}} source={photo}/>
+              <Text style={{fontSize:12}}>Photo</Text>
+            </View>
+          </View>
+
           <View style={styles.newsFeed}>
             <View style={styles.newsFeedItems}>
               <View style={styles.newsFeedItemsHeader}>
                 <Image source={arkademy} style={[styles.profileFoto]}/>
                 <View>
                   <Text style={[styles.textBold,{marginTop:6,minWidth:'70%'}]}>Arkademy</Text>
-                  <Text>2 hrs &bull; <Image source={world} style={{width:10,height:10,borderRadius:5}}/></Text>
+                  <Text style={{fontSize:12}}>2 hrs &bull; <Image source={world} style={{width:10,height:10,borderRadius:5}}/></Text>
                 </View>
                 <Text style={{marginTop:12}}>&bull; &bull; &bull;</Text>
               </View>
               <View style={styles.newsFeedItemsBody}>
                 <Text>Bootcamp hari ketiga !</Text>
-                <Image source={newsFeed1} style={{maxWidth: '100%',maxHeight:200}}/>
+                <Image source={newsFeed1} style={{maxWidth: '100%', maxHeight:200}}/>
+                <Text style={{fontSize:12}}><Image source={like} style={{height:15,width:15}} />12,000</Text>
               </View>
               <View style={styles.newsFeedItemsFooter}>
-                <Text>Footer</Text>
+                <View style={{flex:1,flexDirection:'row',padding:10,justifyContent:"center"}}>
+                  <Image source={likeAlt} style={{width:20,height:20}}/>
+                  <Text style={{fontSize:12,marginTop:2,marginLeft:2}}>Like</Text>
+                </View>
+                <View style={{flex:1,flexDirection:'row',padding:10,justifyContent:"center"}}>
+                  <Image source={commentAlt} style={{width:20,height:20}}/>
+                  <Text style={{fontSize:12,marginTop:2,marginLeft:2}}>Comment</Text>
+                </View>
+                <View style={{flex:1,flexDirection:'row',padding:10,justifyContent:"center"}}>
+                  <Image source={shareAlt} style={{width:20,height:20}}/>
+                  <Text style={{fontSize:12,marginTop:2,marginLeft:2}}>Share</Text>
+                </View>
               </View>
             </View>
           </View>
-          </ScrollView>
-    </View>        
+          <View style={{height:100}}>
+            <Text>&nbsp;</Text>
+          </View>
+        </ScrollView>
+      </View>        
     );
   }
 }
@@ -131,14 +165,14 @@ const styles = StyleSheet.create({
   },
 
   formStatus: {
-    height: 55,
-    padding: 5,
+    height: 75,
+    padding: 0,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#ffffff',
     paddingBottom: 10,
     flexDirection: 'row',
-    marginTop: 1,
+    marginTop: 7,
   },
 
   story: {
@@ -148,7 +182,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: '#ffffff',
     paddingBottom: 10,
-    marginTop: 7,
+    marginTop: 1,
   },
   storyItems: {
     backgroundColor: '#bebebe',
@@ -168,14 +202,21 @@ const styles = StyleSheet.create({
   newsFeedItems: {
     flexDirection: 'column',
     justifyContent:'flex-start',
+    padding:10,
   },
   newsFeedItemsHeader: {
     flexDirection: 'row',
   },
   newsFeedItemsBody: {
-    maxHeight:'100%',
-    padding:10,
+    maxHeight: 255,
+    paddingBottom:0,
   }, 
+  newsFeedItemsFooter: {
+    flexDirection:'row',
+    borderTopWidth:1,
+    borderTopColor:'#bebebe',
+    height:100,
+  },
 
 
   textBold:{
@@ -194,10 +235,10 @@ const styles = StyleSheet.create({
   },
 
   profileFoto: {
-    width: 50,
-    height:50,
+    width: 45,
+    height:45,
     borderRadius: 25,
-    marginLeft: 5,
+    marginLeft: 0,
     marginRight: 5,
   },
 });
