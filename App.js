@@ -1,44 +1,23 @@
 import React, { Component } from 'react';
-import {
-    View,
-    Text,
-} from 'react-native';
-import {
-    TabNavigator,
-    StackNavigator
-} from 'react-navigation';
+import {View, Text,Button} from 'react-native';
+import { Navigation } from 'react-native-navigation';
 
-import Login from './screens/Login';
-import News from './screens/News';
-import HeaderMenu from './screens/HeaderMenu';
-
-
-export const TabNavigate = TabNavigator({
-    Login:{screen:Login},
-    News:{screen:News},
-
-},
-{
-    tabBarPosition: 'bottom',
-    animationEnabled: true,
-    swipeEnabled: false,
-    tabBarComponent: props=>{
-        return(
-            <HeaderMenu navigation={props.navigation}/>
-        )
+class App extends Component {
+    goToScreen = (screenName) => {
+        Navigation.push(this.props.componentId, {
+          component : {
+            name: screenName
+          }
+        });
     }
-});
+    render(){
+        return(
+            <View>
+                <Text>Loading</Text>
+                <Button onPress={() => this.goToScreen('Login')} title={'login'} />
+            </View>
+        );
+    }
+}
 
-
-// export const StackOverTabs = StackNavigator({
-//     Root: {screen:TabNavigate},
-//     GotoAbout:{screen:About}
-// });
-
-
-// export const SignedOut = StackNavigator({
-//     Login:{screen:Login,navigationOptions:{header:null}},
-//     Signup:{screen:Signup,navigationOptions:{header:null}}
-// });
-
-
+export default App;

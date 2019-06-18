@@ -1,0 +1,86 @@
+[
+    {
+    "name": "Aden Trisna Daud Kurnia",
+    "profileFoto": "user.png",
+    "timestamp": "2 hrs",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,",
+    "foto": "statusPemandangan.jpg",
+    "like": 300,
+    "super": 400,
+    "angry": 500,
+    "sad": 32,
+    "lol": 99
+    },
+    {
+    "name": "Feri",
+    "profileFoto": "user.png",
+    "timestamp": "2 hrs",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,",
+    "foto": "statusPemandangan.jpg",
+    "like": 10
+    },
+    {
+    "name": "Aqil",
+    "profileFoto": "user.png",
+    "timestamp": "2 hrs",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,",
+    "foto": "statusPemandangan.jpg",
+    "like": 10
+    },
+    {
+    "name": "Ari",
+    "profileFoto": "user.png",
+    "timestamp": "2 hrs",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,",
+    "foto": "statusPemandangan.jpg",
+    "like": 10
+    },
+    {
+    "name": "Rahardian",
+    "profileFoto": "user.png",
+    "timestamp": "2 hrs",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,",
+    "foto": "statusPemandangan.jpg",
+    "like": 10,
+    "super": 10,
+    "angry": 10,
+    "sad": 10,
+    "lol": 9
+    },
+    {
+    "name": "Aji",
+    "profileFoto": "user.png",
+    "timestamp": "2 hrs",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,",
+    "foto": "statusPemandangan.jpg",
+    "like": 10,
+    "super": 10,
+    "angry": 10,
+    "sad": 10,
+    "lol": 9
+    },
+    {
+    "name": "Ikhsan",
+    "profileFoto": "user.png",
+    "timestamp": "2 hrs",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,",
+    "foto": "statusPemandangan.jpg",
+    "like": 10,
+    "super": 10,
+    "angry": 10,
+    "sad": 10,
+    "lol": 9
+    },
+    {
+    "name": "Candra",
+    "profileFoto": "user.png",
+    "timestamp": "2 hrs",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,",
+    "foto": "statusPemandangan.jpg",
+    "like": 10,
+    "super": 10,
+    "angry": 10,
+    "sad": 10,
+    "lol": 9
+    }
+]

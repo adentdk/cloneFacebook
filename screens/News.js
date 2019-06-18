@@ -2,14 +2,32 @@ import React, {Component} from 'react';
 import {
   Text,
   TextInput,
-  Button,
   View,
   StyleSheet,
   Image,
   ScrollView,
+  TouchableOpacity,
 } from 'react-native';
+import { Navigation } from 'react-native-navigation';
+
 
 class News extends Component {
+
+  constructor(){
+    super();
+    this.state = {
+      status : require('../data/story.json'),
+      newsFeed : require('../data/newsFeed.json'),
+    }
+  }
+  
+  goToScreen = (screenName) => {
+    Navigation.push(this.props.componentId, {
+      component : {
+        name: screenName
+      }
+    });
+  }
   render(){
     let camera = require('../img/camera.png');
     let messenger = require('../img/messenger.png');
@@ -29,44 +47,66 @@ class News extends Component {
     let commentAlt = require('../img/commentAlt.png');
     let shareAlt = require('../img/shareAlt.png');
 
-    let data = require('../data/data.json');
-
     return (
       <View style={styles.container}>
         <View style={styles.header}>
           <View style={styles.camera}>
-            <Image source={camera} style={styles.icon}/>
+            <TouchableOpacity onPress={() => this.goToScreen('PageNotFound')}>
+              <Image source={camera} style={styles.icon}/>
+            </TouchableOpacity>
           </View>
           <View style={styles.search}>
             <TextInput style={[styles.textInput,{borderRadius:0, borderWidth:0}]} placeholder="Search" placeholderTextColor="#dedede" underlineColorAndroid="#eee"/>
           </View>
           <View style={styles.messenger}>
-            <Image source={messenger} style={styles.icon}/>
+            <TouchableOpacity onPress={() => this.goToScreen('PageNotFound')}>
+              <Image source={messenger} style={styles.icon}/>
+            </TouchableOpacity>
           </View>
         </View>
 
         <View style={styles.navigation}>
           <View style={styles.menu}>
-            <Image source={newsFeed} style={styles.icon}/>
+            <TouchableOpacity onPress={() => this.goToScreen('NewsFeed')}>
+              <Image source={newsFeed} style={styles.icon}/>
+            </TouchableOpacity>
           </View>
           <View style={styles.menu}>
-            <Image source={friends} style={styles.icon}/>
+            <TouchableOpacity onPress={() => this.goToScreen('PageNotFound')}>
+              <Image source={friends} style={styles.icon}/>
+            </TouchableOpacity>                                           
           </View>
           <View style={styles.menu}>
-            <Image source={fbVideo} style={styles.icon}/>
+            <TouchableOpacity onPress={() => this.goToScreen('PageNotFound')}>            
+              <Image source={fbVideo} style={styles.icon}/>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.menu}>                                           
+            <TouchableOpacity onPress={() => this.goToScreen('PageNotFound')}>
+              <Image source={userIcon} style={styles.icon}/>
+            </TouchableOpacity>                                           
+          </View>
+          <View style={styles.menu}>                                           
+            <TouchableOpacity onPress={() => this.goToScreen('PageNotFound')}>
+              <Image source={notification} style={styles.icon}/>
+            </TouchableOpacity>                                           
           </View>
           <View style={styles.menu}>
-            <Image source={userIcon} style={styles.icon}/>
-          </View>
-          <View style={styles.menu}>
-            <Image source={notification} style={styles.icon}/>
-          </View>
-          <View style={styles.menu}>
-            <Image source={menu} style={styles.icon}/>
+            <TouchableOpacity onPress={() => this.goToScreen('PageNotFound')}>
+              <Image source={menu} style={styles.icon}/>
+            </TouchableOpacity>                                           
           </View>
         </View>
 
         <ScrollView>
+          <View style={styles.formStatus}>
+            <Image style={styles.profileFoto} source={user}/>
+            <TextInput placeholder="What's on your mind?" placeholderTextColor="#666" style={[styles.textInput,{maxWidth:'60%',color:'#111'}]}/>
+            <View style={{marginLeft:5}}>
+              <Image style={{width:30,height:30}} source={photo}/>
+              <Text style={{fontSize:12}}>Photo</Text>
+            </View>
+          </View>
 
           <ScrollView horizontal={true}>
             <View style={styles.story}>
@@ -77,14 +117,6 @@ class News extends Component {
             </View>
           </ScrollView>
 
-          <View style={styles.formStatus}>
-            <Image style={styles.profileFoto} source={user}/>
-            <TextInput placeholder="What's on your mind?" placeholderTextColor="#666" style={[styles.textInput,{maxWidth:'60%',color:'#111'}]}/>
-            <View style={{marginLeft:5}}>
-              <Image style={{width:30,height:30}} source={photo}/>
-              <Text style={{fontSize:12}}>Photo</Text>
-            </View>
-          </View>
 
           <View style={styles.newsFeed}>
             <View style={styles.newsFeedItems}>
@@ -158,6 +190,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     backgroundColor: '#ffffff',
+    borderBottomColor: '#bebebe',
+    borderBottomWidth: 1,
   },
   menu: {
     flex: 1,
@@ -172,7 +206,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
     paddingBottom: 10,
     flexDirection: 'row',
-    marginTop: 7,
   },
 
   story: {
@@ -182,7 +215,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: '#ffffff',
     paddingBottom: 10,
-    marginTop: 1,
+    marginTop: 7,
   },
   storyItems: {
     backgroundColor: '#bebebe',

@@ -2,8 +2,7 @@
  * @format
  */
 
-import {AppRegistry} from 'react-native';
-import News from './screens/News';
-import {name as appName} from './app.json';
+import {registerScreens} from './function/screens';
 
-AppRegistry.registerComponent(appName, () => News);
+registerScreens();
+
