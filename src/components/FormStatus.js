@@ -15,7 +15,7 @@ class FormStatus extends Component{
                 <Image style={styles.profileFoto} source={user}/>
                 <TextInput placeholder="What's on your mind?" placeholderTextColor="#666" style={[styles.textInput]}/>
                 <View style={{marginLeft:5}}>
-                <Image style={{width:30,height:30}} source={photo}/>
+                <Image style={styles.icon} source={photo}/>
                 <Text style={{fontSize:12}}>Photo</Text>
                 </View>
             </View>
@@ -28,26 +28,33 @@ export default FormStatus;
 const styles = StyleSheet.create({
   
   formStatus: {
-    height: 75,
+    height: 50,
     padding: 0,
-    alignItems: 'center',
+    width: '100%',
     justifyContent: 'center',
     backgroundColor: '#ffffff',
-    paddingBottom: 10,
+    paddingBottom: 0,
     flexDirection: 'row',
+    padding:5,
   },
       
   profileFoto: {
-    width: 45,
-    height:45,
-    borderRadius: 25,
+    width: 40,
+    height:40,
+    borderRadius: 20,
     marginLeft: 0,
     marginRight: 5,
   },
+  icon: {
+    marginLeft:5,
+    width:20,
+    height:20
+  },
+
   textInput: {
     borderWidth: 1,
-    height: 40,
-    width: '100%',
+    height: 35,
+    width: "100%",
     borderColor: '#aaaaaa',
     borderRadius: 20,
     maxWidth:'60%',

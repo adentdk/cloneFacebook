@@ -112,7 +112,7 @@ class Login extends Component {
                     </View>
 
                     <View style={{marginTop:10}}>
-                        <Button onPress={() => this.goToScreen('NewsFeed')}  title={this.state.buttonLogin} style={styles.button} />
+                        <Button onPress={() => this.goToScreen('Home')}  title={this.state.buttonLogin} style={styles.button} />
                     </View>
 
                     <View>
@@ -222,7 +222,9 @@ const styles = StyleSheet.create({
         color: 'blue',
     },
     width80: {
-        width:'80%',
+        alignContent:'center',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
       
 });
