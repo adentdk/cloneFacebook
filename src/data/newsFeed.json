@@ -1,10 +1,10 @@
 [
     {
     "name": "Aden Trisna Daud Kurnia",
-    "profileFoto": "user.png",
+    "profileFoto": "http://localhost/img/user.png",
     "timestamp": "2 hrs",
     "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,",
-    "foto": "statusPemandangan.jpg",
+    "foto": "http://localhost/img/statusPemandangan.jpg",
     "like": 300,
     "super": 400,
     "angry": 500,
@@ -16,7 +16,7 @@
     "profileFoto": "user.png",
     "timestamp": "2 hrs",
     "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,",
-    "foto": "statusPemandangan.jpg",
+    "foto": "http://localhost/img/statusPemandangan.jpg",
     "like": 10
     },
     {
@@ -24,7 +24,7 @@
     "profileFoto": "user.png",
     "timestamp": "2 hrs",
     "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,",
-    "foto": "statusPemandangan.jpg",
+    "foto": "http://localhost/img/statusPemandangan.jpg",
     "like": 10
     },
     {
@@ -32,15 +32,15 @@
     "profileFoto": "user.png",
     "timestamp": "2 hrs",
     "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,",
-    "foto": "statusPemandangan.jpg",
+    "foto": "http://localhost/img/statusPemandangan.jpg",
     "like": 10
     },
     {
     "name": "Rahardian",
-    "profileFoto": "user.png",
+    "profileFoto": "http://localhost/img/user.png",
     "timestamp": "2 hrs",
     "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,",
-    "foto": "statusPemandangan.jpg",
+    "foto": "http://localhost/img/statusPemandangan.jpg",
     "like": 10,
     "super": 10,
     "angry": 10,
@@ -49,10 +49,10 @@
     },
     {
     "name": "Aji",
-    "profileFoto": "user.png",
+    "profileFoto": "http://localhost/img/user.png",
     "timestamp": "2 hrs",
     "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,",
-    "foto": "statusPemandangan.jpg",
+    "foto": "http://localhost/img/statusPemandangan.jpg",
     "like": 10,
     "super": 10,
     "angry": 10,
@@ -61,10 +61,10 @@
     },
     {
     "name": "Ikhsan",
-    "profileFoto": "user.png",
+    "profileFoto": "http://localhost/img/user.png",
     "timestamp": "2 hrs",
     "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,",
-    "foto": "statusPemandangan.jpg",
+    "foto": "http://localhost/img/statusPemandangan.jpg",
     "like": 10,
     "super": 10,
     "angry": 10,
@@ -73,10 +73,10 @@
     },
     {
     "name": "Candra",
-    "profileFoto": "user.png",
+    "profileFoto": "http://localhost/img/user.png",
     "timestamp": "2 hrs",
     "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,",
-    "foto": "statusPemandangan.jpg",
+    "foto": "http://localhost/img/statusPemandangan.jpg",
     "like": 10,
     "super": 10,
     "angry": 10,

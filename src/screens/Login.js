@@ -4,10 +4,10 @@ import {
     TextInput,
     Button,
     View,
-    StyleSheet,
     Image,
-    TouchableOpacity,
     Modal,
+    StyleSheet,
+    TouchableOpacity,
     TouchableHighlight,
 } from 'react-native';
 import { Navigation } from 'react-native-navigation';
@@ -30,14 +30,9 @@ class Login extends Component {
 
     }
 
-    setModalVisible = (visible) => {
-        this.setState({
-            modalVisible : visible
-        });
-    }
-
     indonesian = () => {
         this.setState({
+            modalVisible : false,
             inputEmail : "Telepon atau Email",
             inputPassword : "Kata Sandi",
             buttonLogin : 'Masuk',
@@ -49,18 +44,6 @@ class Login extends Component {
         });
     }
 
-    english = () => {
-        this.setState({
-            inputEmail : "Mobile Number or Email Address",
-            inputPassword : "Password",
-            buttonLogin : 'Log In',
-            textForgottenPassword : 'Forgotten Password?',
-            textOr : 'or',
-            buttonCreateNewAccount : 'Create New Account',
-            close: 'Close',
-            others : 'Others'
-        });
-    }
     
     goToScreen = (screenName) => {
         Navigation.push(this.props.componentId, {
@@ -69,61 +52,82 @@ class Login extends Component {
           }
         });
     }
+    setModalVisible = (value) => {
+        this.setState({
+            modalVisible : value
+        })
+    }
+
+    changeLanguage = () => {
+        this.setState({
+            modalVisible : false
+        });
+    }
 
     render(){
         return(
             <View style={styles.container}>
-                <Modal animationType="slide" transparent={false} visible={this.state.modalVisible}>
+
+                <Modal animationType="slide" transparent={false} visible={() => this.state.modalVisible}>
                     <View style={{padding:20}}>
-                        <TouchableOpacity>
-                            <Text>Afrikaans</Text>
+
+                        <TouchableOpacity onPress={() =>  this.changeLanguage('Indonesia') }>
+                            <Text style={styles.languageText}>Indonesia</Text>
                         </TouchableOpacity>
-                        <TouchableHighlight onPress={() => {this.setModalVisible(false)}}>
-                            <Text style={[styles.language,styles.link,{fontSize:12}]}>{this.state.close}</Text>
+                        <TouchableOpacity onPress={() =>  this.changeLanguage('English') }>
+                            <Text style={styles.languageText}>English</Text>
+                        </TouchableOpacity>
+                        <TouchableHighlight onPress={() => this.setModalVisible(false)}>
+                            <Text style={styles.languageText}>Close</Text>
                         </TouchableHighlight>
+
                     </View>
                 </Modal>
+
                 <View style={styles.header}>
                     <Image source={require('../img/facebookBanner.jpg')} style={styles.banner}/>
                 </View>
 
+
                 <View style={styles.main}>
+
+
                     <View style={styles.languages}>
-                        <TouchableOpacity onPress={this.english}>
-                            <Text style={[styles.language,styles.link,{fontSize:12}]}>English</Text>
+
+                        <TouchableOpacity onPress={() =>  this.changeLanguage('Indonesia') }>
+                            <Text style={styles.languageText}>Indonesia</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={this.indonesian}>
-                            <Text style={[styles.language,styles.link,{fontSize:12}]}>&bull; Bahasa indonesia</Text>
+                        <TouchableOpacity onPress={() =>  this.changeLanguage('English') }>
+                            <Text style={styles.languageText}>English</Text>
                         </TouchableOpacity>
-                        <TouchableHighlight onPress={() => {this.setModalVisible(true)}}>
-                            <Text style={[styles.language,styles.link,{fontSize:12}]}>&bull; {this.state.others}...</Text>
+                        <TouchableHighlight onPress={() => this.setModalVisible(true)}>
+                            <Text style={styles.languageText}>Others</Text>
                         </TouchableHighlight>
+                        
                     </View>
                     
                     <View style={styles.formWrapper}>
-                        <View>
-                            <TextInput placeholder={this.state.inputEmail} placeholderTextColor='#aeaeae' underlineColorAndroid="lightblue" style={styles.textInput}/>
-                        </View>
-                        <View>
-                            <TextInput placeholder={this.state.inputPassword} placeholderTextColor='#aeaeae' secureTextEntry={true} underlineColorAndroid="lightblue" style={styles.textInput}/>
-                        </View>
+                        <TextInput placeholder={this.state.inputEmail} placeholderTextColor='#aeaeae' underlineColorAndroid="lightblue" style={styles.textInput}/>
+                        <TextInput placeholder={this.state.inputPassword} placeholderTextColor='#aeaeae' secureTextEntry={true} underlineColorAndroid="lightblue" style={styles.textInput}/>
                     </View>
+
                     <View style={{marginTop:10}}>
                         <Button onPress={() => this.goToScreen('NewsFeed')}  title={this.state.buttonLogin} style={styles.button} />
                     </View>
+
                     <View>
-                        <Text style={[styles.link,styles.center,{marginTop:10, fontSize:12}]}>{this.state.textForgottenPassword}</Text>
+                        <Text style={[styles.link,styles.center]}>{this.state.textForgottenPassword}</Text>
                     </View>
+
                     <View style={styles.textOrWrapper}>
+
                         <View style={styles.hr}/>
-                        <View>
-                            <Text>{this.state.textOr}</Text>
-                        </View>
-                        <View style={styles.hr}>
-                            <Text>&nbsp;</Text>
-                        </View>
+                        <View><Text>{this.state.textOr}</Text></View>
+                        <View style={styles.hr}/>
+
                     </View>
-                    <View style={{alignItems:'center',alignContent:'flex-end',marginTop:20}}>
+                    
+                    <View>
                         <View style={styles.width80}>
                             <Button title={this.state.buttonCreateNewAccount} color="green"/>
                         </View>
