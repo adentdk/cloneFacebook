@@ -30,7 +30,7 @@ class Home extends Component {
       <View style={styles.container}>
 
         <Header/>
-        <NavigationBar/>
+        <NavigationBar componentId={this.props.componentId}/>
 
         <ScrollView>
 

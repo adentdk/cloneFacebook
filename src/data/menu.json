@@ -1,0 +1,74 @@
+{
+    "profile" : [
+        {
+            "title" : "Aden Trisna Daud Kurnia",
+            "subtitle" : "see your profile",
+            "action" : "Profile",
+            "avatar" : "https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg"
+        },
+        {
+            "title" : "Creepypasta Indonesia",
+            "subtitle" : "40 new",
+            "action" : "Page",
+            "avatar" : "http://3.bp.blogspot.com/-VQuBN_PvqW0/Veggdcz_srI/AAAAAAAAAzM/dbh8C8BBaME/s1600/Urban%2BLegend%2BHalloween%2BClown.jpg"
+        }
+    ],
+    "shortcut" : [
+        {
+            "title" : "Page",
+            "subtitle" : "88 updates",
+            "icon" : "flag",
+            "type" : "font-awesome",
+            "action" : ""
+        },
+        {
+            "title" : "Friends",
+            "subtitle" : "476 request",
+            "icon" : "users",
+            "type" : "entypo",
+            "action" : "Friends"
+        },
+        {
+            "title" : "Group",
+            "subtitle" : "",
+            "icon" : "users",
+            "type" : "font-awesome",
+            "action" : ""
+        },
+        {
+            "title" : "Wacthed Video",
+            "subtitle" : "476 request",
+            "icon" : "airplay",
+            "type" : "material",
+            "action" : ""
+        },
+        {
+            "title" : "Event",
+            "subtitle" : "",
+            "icon" : "calendar",
+            "type" : "antdesign" ,
+            "action" : ""
+        },
+        {
+            "title" : "Memories",
+            "subtitle" : "so many memories",
+            "icon" : "history",
+            "type" : "font-awesome" ,
+            "action" : ""
+        },
+        {
+            "title" : "Saved",
+            "subtitle" : "46 new",
+            "icon" : "bookmark",
+            "type" : "font-awesome", 
+            "action" : ""
+        },
+        {
+            "title" : "Log out",
+            "subtitle" : "",
+            "icon" : "logout",
+            "type" : "material-community",
+            "action" : ""
+        }
+    ]
+}   

@@ -46,6 +46,8 @@ class Login extends Component {
 
     
     goToScreen = (screenName) => {
+        console.log(this.props.componentId);
+        
         Navigation.push(this.props.componentId, {
           component : {
             name: screenName
@@ -72,10 +74,10 @@ class Login extends Component {
                     <View style={{padding:20}}>
 
                         <TouchableOpacity onPress={() =>  this.changeLanguage('Indonesia') }>
-                            <Text style={styles.languageText}>Indonesia</Text>
+                            <Text style={styles.languageText}>Indonesia </Text>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() =>  this.changeLanguage('English') }>
-                            <Text style={styles.languageText}>English</Text>
+                            <Text style={styles.languageText}>English </Text>
                         </TouchableOpacity>
                         <TouchableHighlight onPress={() => this.setModalVisible(false)}>
                             <Text style={styles.languageText}>Close</Text>

@@ -7,7 +7,7 @@ registerScreens();
 Navigation.setDefaultOptions({
     topBar: {
       visible: false,
-      animate: false,
+      drawBehind: true,
     },
     layout : {
       backgroundColor : '',

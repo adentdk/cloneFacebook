@@ -1,5 +1,6 @@
 [
     {
+    "id" : 1,
     "name": "Aden Trisna Daud Kurnia",
     "profileFoto": "https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg",
     "timestamp": "2 hrs",
@@ -12,11 +13,12 @@
     "lol": 99
     },
     {
+    "id" : 2,
     "name": "Feri",
     "profileFoto": "http://lsimfkub.ub.ac.id/wp-content/uploads/2015/09/public-relations-icon.png",
     "timestamp": "2 hrs",
     "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,",
-    "foto": "https://pbs.twimg.com/profile_images/657607242947141632/B0RtPB6__400x400.png",
+    "foto": "",
     "like": 10,
     "super" : 0,
     "angry" : 0,
@@ -24,11 +26,12 @@
     "lol" : 0
     },
     {
+    "id" : 2,
     "name": "Aqil",
     "profileFoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShQY2HK02e6OjKuBCcYhyYhiCZBNtmuJ19ua-OYRq0eCrnijRh",
     "timestamp": "2 hrs",
     "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,",
-    "foto": "https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg",
+    "foto": "",
     "like": 10,
     "super" : 0,
     "angry" : 0,
@@ -36,6 +39,7 @@
     "lol" : 0
     },
     {
+    "id" : 3,
     "name": "Ari",
     "profileFoto": "https://cdn131.picsart.com/284121909010201.jpg?c256x256",
     "timestamp": "2 hrs",
@@ -48,6 +52,7 @@
     "lol" : 130
     },
     {
+    "id" : 4,
     "name": "Rahardian",
     "profileFoto": "https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg",
     "timestamp": "2 hrs",

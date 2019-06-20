@@ -5,58 +5,61 @@ import {
   StyleSheet,
   Image,
 } from 'react-native';
+import { Item } from 'native-base';
 
 class NewsFeed extends Component{
     render()
     {
-        const data = this.props.data.map(function(item, index){
-            return(
-                <View style={styles.newsFeed}  key={index}>
-
-                  <View style={styles.newsFeedItems}>
-
-                    <View style={styles.newsFeedItemsHeader}>
-                      <View style={{flex:2}}>
-                        <Image source={{uri : item.profileFoto }} style={styles.profileFoto}/>
-                      </View>
-                      <View style={{flex:8}}>
-                        <Text style={[styles.textBold,{marginLeft:4}]}>{item.name}</Text>
-                        <Text style={{marginLeft:4}}>{item.timestamp} &bull; <Image source={require('../img/world.png')} style={styles.bullet}/></Text>
-                      </View>
-                      <View style={{flex:1}}>
-                        <Text>&bull; &bull; &bull;</Text>
-                      </View>
-
-                    </View>
-                    
-                    <View style={styles.newsFeedItemsBody}>
-
-                      <Text>{item.content}</Text>
-
-                      <Image source={{uri : item.foto}} style={styles.statusFoto}/>
-                      <Text>
-                          <Image source={require('../img/like.png')} style={{height:15,width:15}} />
-                          {item.like + item.super + item.sad + item.lol + item.angry}
-                      </Text>
-                    </View>
-                    <View style={styles.newsFeedItemsFooter}>
-                      <View style={styles.buttonFooter}>
-                        <Image source={require('../img/likeAlt.png')} style={styles.icon}/>
-                      </View>
-                      <View style={styles.buttonFooter}>
-                        <Image source={require('../img/commentAlt.png')} style={styles.icon}/>   
-                      </View>
-                      <View style={styles.buttonFooter}>
-                        <Image source={require('../img/shareAlt.png')} style={styles.icon}/>
-                      </View>
-                    </View>
-                  </View>
-                </View>
-            )
-          });
         return(
             <View>
-                {data}
+              {
+                this.props.data.map(function(item, index){
+                  return(
+                      <View style={styles.newsFeed}  key={index}>
+      
+                        <View style={styles.newsFeedItems}>
+      
+                          <View style={styles.newsFeedItemsHeader}>
+                            <View style={{flex:2}}>
+                              <Image source={{uri : item.profileFoto }} style={styles.profileFoto}/>
+                            </View>
+                            <View style={{flex:8}}>
+                              <Text style={[styles.textBold,{marginLeft:4}]}>{item.name}</Text>
+                              <Text style={{marginLeft:4}}>{item.timestamp} &bull; <Image source={require('../img/world.png')} style={styles.bullet}/></Text>
+                            </View>
+                            <View style={{flex:1}}>
+                              <Text>&bull; &bull; &bull;</Text>
+                            </View>
+      
+                          </View>
+                          
+                          <View style={styles.newsFeedItemsBody}>
+      
+                            <Text>{item.content}</Text>
+                            
+                            <Image source={{uri : item.foto}} style={styles.statusFoto}/>
+                            
+                            <Text>
+                                <Image source={require('../img/like.png')} style={{height:15,width:15}} />
+                                {item.like + item.super + item.sad + item.lol + item.angry}
+                            </Text>
+                          </View>
+                          <View style={styles.newsFeedItemsFooter}>
+                            <View style={styles.buttonFooter}>
+                              <Image source={require('../img/likeAlt.png')} style={styles.icon}/>
+                            </View>
+                            <View style={styles.buttonFooter}>
+                              <Image source={require('../img/commentAlt.png')} style={styles.icon}/>   
+                            </View>
+                            <View style={styles.buttonFooter}>
+                              <Image source={require('../img/shareAlt.png')} style={styles.icon}/>
+                            </View>
+                          </View>
+                        </View>
+                      </View>
+                  )
+                })
+              }
             </View>
         )
     }

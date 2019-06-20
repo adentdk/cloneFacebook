@@ -5,8 +5,23 @@ import {
   Image,
   TouchableOpacity
 } from 'react-native';
+import {Navigation} from 'react-native-navigation';
 
 class NavigationBar extends Component{
+
+  
+    goToScreen = (screenName) => {
+      try{
+          Navigation.push(this.props.componentId, {
+                component : {
+                  name: screenName
+                }
+              });
+       } catch(e){
+         console.log(e);
+       } 
+    }
+        
     render(){
         let menu = require('../img/list.png');
         let newsFeed = require('../img/newsFeed.png');
@@ -17,32 +32,32 @@ class NavigationBar extends Component{
         return(
         <View style={styles.navigation}>
           <View style={styles.menu}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => this.goToScreen('Home')}>
               <Image source={newsFeed} style={styles.icon}/>
             </TouchableOpacity>
           </View>
           <View style={styles.menu}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => this.goToScreen('Home')}>
               <Image source={friends} style={styles.icon}/>
             </TouchableOpacity>                                           
           </View>
           <View style={styles.menu}>
-            <TouchableOpacity>            
+            <TouchableOpacity onPress={() => this.goToScreen('Home')}>            
               <Image source={fbVideo} style={styles.icon}/>
             </TouchableOpacity>
           </View>
           <View style={styles.menu}>                                           
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => this.goToScreen('Home')}>
               <Image source={userIcon} style={styles.icon}/>
             </TouchableOpacity>                                           
           </View>
           <View style={styles.menu}>                                           
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => this.goToScreen('Home')}>
               <Image source={notification} style={styles.icon}/>
             </TouchableOpacity>                                           
           </View>
           <View style={styles.menu}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => this.goToScreen('Menu')}>
               <Image source={menu} style={styles.icon}/>
             </TouchableOpacity>                                           
           </View>

@@ -1,0 +1,56 @@
+{
+    "others" : [
+        {
+            "avatar" : "https://images.f2fcdn.net/files/elvenza/110117/char-moon-name.png",
+            "name" : "Abimanyu",
+            "mutualFriends" : "10"
+        },
+        {
+            "avatar" : "https://cdn.popbela.com/content-images/post/20180528/foto-2-dce384e70603e395420097ca4492d07a_750x500.jpg",
+            "name" : "Adiguna",
+            "mutualFriends" : "3"
+        },
+        {
+            "avatar" : "https://obs.line-scdn.net/0hnBUguVbaMW1oHh7zXvROOlFIMgJbciJuDChgczhwb1lNeX45BysrA0sfb1REenYzBip5DExbbltHKnE4BC0/w644",
+            "name" : "Aditya",
+            "mutualFriends" : "6"
+        },
+        {
+            "avatar" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX5NeflQAXI82yTIujnvKVP3MkomJn0_3kpHf_5eOzjpDXkWKV",
+            "name" : "Arjuna",
+            "mutualFriends" : "20"
+        },
+        {
+            "avatar" : "http://dkv.binus.ac.id/files/2017/05/stella-2.jpg",
+            "name" : "Bramantya",
+            "mutualFriends" : "45"
+        }
+    ],
+    "myFriends" : [
+        {
+            "avatar" : "https://cdn0-production-images-kly.akamaized.net/tAr72vTJCpF4IF9O5L493CD79kE=/640x360/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/2754932/original/005940800_1552970791-fotoHL_kucing.jpg",
+            "name" : "Cakra",
+            "mutualFriends" : "45"
+        },
+        {
+            "avatar" : "https://kucingpedia.com/wp-content/uploads/2017/11/cara-mengobati-kucing-yang-demam.jpg",
+            "name" : "Cokro",
+            "mutualFriends" : "45"
+        },
+        {
+            "avatar" : "https://em.wattpad.com/39d062d53938df2658d57d49fa2079148ea8d0e5/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f5432796c61566b4f3254784d2d673d3d2d3439343738323235312e313466653961333034663231663139653632363731323235313330342e6a7067?s=fit&w=720&h=720",
+            "name" : "Jikra",
+            "mutualFriends" : "45"
+        },
+        {
+            "avatar" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEvWDM6RzKmZKzYgZTnWYyhXwxmivwzkVYZKntXMFFUrN1w78vqw",
+            "name" : "kodam",
+            "mutualFriends" : "45"
+        },
+        {
+            "avatar" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEvWDM6RzKmZKzYgZTnWYyhXwxmivwzkVYZKntXMFFUrN1w78vqw",
+            "name" : "kodim",
+            "mutualFriends" : "45"
+        }
+    ]
+}
