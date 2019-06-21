@@ -28,26 +28,79 @@
     ],
     "myFriends" : [
         {
+            "id" :1,
+            "name": "Aden Trisna Daud Kurnia",
+            "avatar": "https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg",
+            "mutualFriends" : "12"
+        },
+        {
+            "id" :2,
+            "name": "Feri",
+            "avatar": "http://lsimfkub.ub.ac.id/wp-content/uploads/2015/09/public-relations-icon.png",
+            "mutualFriends" : "12"
+        },
+        {
+            "id" :3,
+            "name": "Aqil",
+            "avatar": "https://cdn-images-1.medium.com/max/672/0*Rb88ivTuqQAvWJEa.png",
+            "mutualFriends" : "12"
+        },
+        {
+            "id" :4,
+            "name": "Ari",
+            "avatar": "https://cdn131.picsart.com/284121909010201.jpg?c256x256",
+            "mutualFriends" : "12"
+        },
+        {
+            "id" :5,
+            "name": "Rahardian",
+            "avatar": "https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg",
+            "mutualFriends" : "12"
+        },
+        {
+            "id" :6,
+            "name": "Aji",
+            "avatar": "https://c-sf.smule.com/sf/s91/arr/37/d5/fafaff41-91f7-4a58-9489-8bf18354172c.jpg",
+            "mutualFriends" : "12"
+        },
+        {
+            "id" :7,
+            "name": "Ikhsan",
+            "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Evolution_of_a_Tornado.jpg/500px-Evolution_of_a_Tornado.jpg",
+            "mutualFriends" : "12"
+        },
+        {
+            "id" :8,
+            "name": "Candra",
+            "avatar": "https://secure.gravatar.com/avatar/24003f7e50facf623e4d4327b8b5c9fd?s=96&d=mm&r=g",
+            "mutualFriends" : "12"
+        },
+        {
+            "id" : 9,
             "avatar" : "https://cdn0-production-images-kly.akamaized.net/tAr72vTJCpF4IF9O5L493CD79kE=/640x360/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/2754932/original/005940800_1552970791-fotoHL_kucing.jpg",
             "name" : "Cakra",
             "mutualFriends" : "45"
         },
         {
+            "id" : 10,
             "avatar" : "https://kucingpedia.com/wp-content/uploads/2017/11/cara-mengobati-kucing-yang-demam.jpg",
             "name" : "Cokro",
             "mutualFriends" : "45"
         },
         {
+            "id" : 11,
             "avatar" : "https://em.wattpad.com/39d062d53938df2658d57d49fa2079148ea8d0e5/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f5432796c61566b4f3254784d2d673d3d2d3439343738323235312e313466653961333034663231663139653632363731323235313330342e6a7067?s=fit&w=720&h=720",
             "name" : "Jikra",
             "mutualFriends" : "45"
         },
         {
+            "id" : 12,
             "avatar" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEvWDM6RzKmZKzYgZTnWYyhXwxmivwzkVYZKntXMFFUrN1w78vqw",
             "name" : "kodam",
             "mutualFriends" : "45"
         },
         {
+            "id" : 13,
             "avatar" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEvWDM6RzKmZKzYgZTnWYyhXwxmivwzkVYZKntXMFFUrN1w78vqw",
             "name" : "kodim",
             "mutualFriends" : "45"

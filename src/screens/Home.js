@@ -10,8 +10,8 @@ import {
 import Header from '../components/Header';
 import NavigationBar from '../components/NavigationBar';
 import FormStatus from '../components/FormStatus';
-import Story from '../components/Story';
-import NewsFeed from '../components/NewsFeed';
+import Story from '../components/Story/Story';
+import NewsFeed from '../components/NewsFeed/NewsFeed';
 
 
 class Home extends Component {

@@ -5,6 +5,7 @@ registerScreens();
 
 
 Navigation.setDefaultOptions({
+    
     topBar: {
       visible: false,
       drawBehind: true,

@@ -6,24 +6,32 @@
     "timestamp": "2 hrs",
     "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,",
     "foto": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Evolution_of_a_Tornado.jpg/500px-Evolution_of_a_Tornado.jpg",
-    "like": 300,
-    "super": 400,
-    "angry": 500,
-    "sad": 32,
-    "lol": 99
+    "response" : [
+        {"count" : 57, "name" : "like1", "type" : "antdesign", "color": "#3498db"},
+        {"count" : 36, "name" : "heart", "type" : "material-community", "color": "#e74c3c"},
+        {"count" : 40, "name" : "emoticon-excited", "type" : "material-community", "color": "#f1c40f"},
+        {"count" : 12, "name" : "emoticon-sad", "type" : "material-community", "color": "#f1c40f"},
+        {"count" : 400, "name" : "emoticon-angry", "type" : "material-community", "color": "#e74c3c"}
+        ]
     },
     {
     "id" : 2,
     "name": "Feri",
     "profileFoto": "http://lsimfkub.ub.ac.id/wp-content/uploads/2015/09/public-relations-icon.png",
+    "group" : "Arkademy Batch 10",
     "timestamp": "2 hrs",
     "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,",
     "foto": "",
-    "like": 10,
-    "super" : 0,
-    "angry" : 0,
-    "sad" : 0,
-    "lol" : 0
+    "response" : [
+        {"count" : 23, "name" : "like1", "type" : "antdesign", "color": "#3498db"},
+        {"count" : 1, "name" : "heart", "type" : "material-community", "color": "#e74c3c"},
+        {"count" : 5,"name" : "emoticon-excited", "type" : "material-community", "color": "#f1c40f"},
+        {"count" : 21, "name" : "emoticon-sad", "type" : "material-community", "color": "#f1c40f"},
+        {"count" : 7, "name" : "emoticon-angry", "type" : "material-community", "color": "#e74c3c"}
+        ],
+    "comments" : [
+        {"name" : "ihsan"}
+    ]
     },
     {
     "id" : 2,
@@ -32,11 +40,13 @@
     "timestamp": "2 hrs",
     "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,",
     "foto": "",
-    "like": 10,
-    "super" : 0,
-    "angry" : 0,
-    "sad" : 0,
-    "lol" : 0
+    "response" : [
+        {"count" : 1, "name" : "like1", "type" : "antdesign", "color": "#3498db"},
+        {"count" : 32,"name" : "heart", "type" : "material-community", "color": "#e74c3c"},
+        {"count" : 22,"name" : "emoticon-excited", "type" : "material-community", "color": "#f1c40f"},
+        {"count" : 8, "name" : "emoticon-sad", "type" : "material-community", "color": "#f1c40f"},
+        {"count" : 12, "name" : "emoticon-angry", "type" : "material-community", "color": "#e74c3c"}
+        ]
     },
     {
     "id" : 3,
@@ -45,11 +55,13 @@
     "timestamp": "2 hrs",
     "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,",
     "foto": "https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg",
-    "like": 10,
-    "super" : 0,
-    "angry" : 20,
-    "sad" : 0,
-    "lol" : 130
+    "response" : [
+        {"count" : 12, "name" : "like1", "type" : "antdesign", "color": "#3498db"},
+        {"count" : 21,"name" : "heart", "type" : "material-community", "color": "#e74c3c"},
+        {"count" : 23,"name" : "emoticon-excited", "type" : "material-community", "color": "#f1c40f"},
+        {"count" : 32, "name" : "emoticon-sad", "type" : "material-community", "color": "#f1c40f"},
+        {"count" : 12, "name" : "emoticon-angry", "type" : "material-community", "color": "#e74c3c"}
+        ]
     },
     {
     "id" : 4,
@@ -58,10 +70,12 @@
     "timestamp": "2 hrs",
     "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,",
     "foto": "http://lsimfkub.ub.ac.id/wp-content/uploads/2015/09/public-relations-icon.png",
-    "like": 10,
-    "super": 0,
-    "angry": 10,
-    "sad": 10,
-    "lol": 9
+    "response" : [
+        {"count" : 1, "name" : "like1", "type" : "antdesign", "color": "#3498db"},
+        {"count" : 2,"name" : "heart", "type" : "material-community", "color": "#e74c3c"},
+        {"count" : 4,"name" : "emoticon-excited", "type" : "material-community", "color": "#f1c40f"},
+        {"count" : 12, "name" : "emoticon-sad", "type" : "material-community", "color": "#f1c40f"},
+        {"count" : 16, "name" : "emoticon-angry", "type" : "material-community", "color": "#e74c3c"}
+        ]
     }
 ]
