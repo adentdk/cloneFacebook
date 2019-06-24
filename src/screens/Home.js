@@ -22,24 +22,25 @@ class Home extends Component {
       story : require('../data/story.json'),
       newsFeed : require('../data/newsFeed.json')
     }
-  }
+  }  
   render(){
-
+    const componentId = this.props.componentId;
+    
     return (
 
       <View style={styles.container}>
 
         <Header/>
-        <NavigationBar componentId={this.props.componentId}/>
+        <NavigationBar componentId={componentId}/>
 
         <ScrollView>
 
           <FormStatus/>
 
-          <Story data={this.state.story}/>
+          <Story data={this.state.story} componentId={componentId}/>
 
 	
-	        <NewsFeed data={this.state.newsFeed}/>
+	        <NewsFeed data={this.state.newsFeed} componentId={componentId}/>
 
             <TouchableOpacity>
             <View style={styles.btnLoadMore}>

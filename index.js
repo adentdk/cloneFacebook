@@ -5,13 +5,16 @@ registerScreens();
 
 
 Navigation.setDefaultOptions({
-    
     topBar: {
       visible: false,
       drawBehind: true,
+      height:0,
+      paddingTop: -20,
+      searchBarHiddenWhenScrolling:true,
+      topMargin:-20,
     },
     layout : {
-      backgroundColor : '',
+      backgroundColor : 'transparent',
     }  
 });
 
@@ -25,6 +28,11 @@ Navigation.events().registerAppLaunchedListener(() => {
                 {
                   component: {
                       name: "Login"
+                  }
+                },
+                {
+                  component : {
+                    name: "Home"
                   }
                 },
               ]

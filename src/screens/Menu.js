@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {
   View,
   StyleSheet,
-  ScrollView
+  ScrollView,
+  FlatList,
 } from 'react-native';
 import { ListItem,Divider } from 'react-native-elements';
 
@@ -20,15 +21,11 @@ class Menu extends Component {
     }
 
     goToScreen = (screenName) => {
-        try{
-            Navigation.push(this.props.componentId, {
-                  component : {
-                    name: screenName
-                  }
-                });
-         } catch(e){
-           console.log(e);
-         } 
+        Navigation.push(this.props.componentId, {
+                component : {
+                name: screenName
+                }
+            })
       }
 
     render(){
@@ -39,7 +36,6 @@ class Menu extends Component {
                 
                 <Header/>
                 <NavigationBar componentId={this.props.componentId}/>
-                <ListItem title="a"  subtitle="s" onPress={() => this.goToScreen('Friends')} />
                 {
                     this.state.list.profile.map(function(item, index){
                         return (
@@ -52,18 +48,14 @@ class Menu extends Component {
                     })
                 }
                 <Divider style={{backgroundColor:'#bebebe'}}/>
-                {
-                     this.state.list.shortcut.map(function(item, index){
-                        return (
-                            <ListItem key={index}
-                                      title={item.title}
-                                      subtitle={item.subtitle}
-                                      leftIcon={{ name: item.icon, color: '#3B5999', type: item.type }}
-                                      onPress={() => this.goToScreen('Friends')}/>
-                        )
-                    })
-                }
-
+                <FlatList keyExtractor={(item,index)=> index.toString()}
+                          data={this.state.list.shortcut}
+                          renderItem={({item}) => <ListItem
+                          title={item.title}
+                          subtitle={item.subtitle}
+                          leftIcon={{ name: item.icon, color: '#3B5999', type: item.type }}
+                          onPress={() => this.goToScreen('Friends')}/>  }
+                        />
                 </ScrollView>
             </View>
         )

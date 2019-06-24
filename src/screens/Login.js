@@ -1,141 +1,176 @@
 import React, { Component } from 'react';
 import {
+    Alert,
     Text,
     TextInput,
     Button,
     View,
     Image,
-    Modal,
     StyleSheet,
     TouchableOpacity,
     TouchableHighlight,
+    ScrollView,
+    AsyncStorage
 } from 'react-native';
 import { Navigation } from 'react-native-navigation';
+import axios from 'axios';
 
 class Login extends Component {
     constructor()
     {
         super();
         this.state = {
-            modalVisible : false,
-            inputEmail : "Mobile Number or Email Address",
-            inputPassword : "Password",
-            buttonLogin : 'Log In',
-            textForgottenPassword : 'Forgotten Password?',
-            textOr : 'or',
-            buttonCreateNewAccount : 'Create New Account',
-            close: 'Close',
-            others : 'Others'
+            inputEmail :  '',
+            inputPassword : ''
         }
 
-    }
-
-    indonesian = () => {
-        this.setState({
-            modalVisible : false,
-            inputEmail : "Telepon atau Email",
-            inputPassword : "Kata Sandi",
-            buttonLogin : 'Masuk',
-            textForgottenPassword : 'Lupa Kata Sandi?',
-            textOr : 'atau',
-            buttonCreateNewAccount : 'Buat Akun Baru',
-            close : 'Tutup',
-            others : 'Lainnya'
+        AsyncStorage.getItem('jwt', (error, result) => {
+            if(result != null) {
+                Navigation.push(this.props.componentId, {
+                    component : {
+                      name: "Home"
+                    }
+                });
+            }
         });
+
     }
 
-    
+    showAlert = () => {
+    Alert.alert(
+        'Alert Title',
+        'My Alert Msg',
+        [
+            {text: 'Ask me later', onPress: () => console.log('Ask me later pressed')},
+            {
+            text: 'Cancel',
+            onPress: () => console.log('Cancel Pressed'),
+            style: 'cancel',
+            },
+            {text: 'OK', onPress: () => console.log('OK Pressed')},
+        ],
+        {cancelable: false},
+        );
+    }
+
+    handleLogin = () => {
+
+        axios.post('http://192.168.0.12:3000/auth/signin',{
+            "email" : this.state.inputEmail,
+            "password" : this.state.inputPassword
+        })
+        .then(res => {
+
+            const data = res.data.data
+            axios.post("http://192.168.0.12:3000/auth/create/authorization",{
+                "user_id" : data.id,
+                "name" : data.name,
+                "email" : data.email
+            })
+            .then(res => {
+                AsyncStorage.setItem('jwt',res.data.data.token);
+            })
+            .catch(err => {
+                console.log(err);
+            })
+        })
+        .catch(err => {
+            console.log("ERROR :",err);
+        })
+    }
+
     goToScreen = (screenName) => {
-        console.log(this.props.componentId);
-        
         Navigation.push(this.props.componentId, {
           component : {
             name: screenName
           }
         });
     }
-    setModalVisible = (value) => {
-        this.setState({
-            modalVisible : value
-        })
-    }
-
-    changeLanguage = () => {
-        this.setState({
-            modalVisible : false
-        });
-    }
 
     render(){
         return(
             <View style={styles.container}>
-
-                <Modal animationType="slide" transparent={false} visible={() => this.state.modalVisible}>
-                    <View style={{padding:20}}>
-
-                        <TouchableOpacity onPress={() =>  this.changeLanguage('Indonesia') }>
-                            <Text style={styles.languageText}>Indonesia </Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={() =>  this.changeLanguage('English') }>
-                            <Text style={styles.languageText}>English </Text>
-                        </TouchableOpacity>
-                        <TouchableHighlight onPress={() => this.setModalVisible(false)}>
-                            <Text style={styles.languageText}>Close</Text>
-                        </TouchableHighlight>
-
+                <ScrollView>
+                    <View style={styles.header}>
+                        <Image source={require('../img/facebookBanner.jpg')} style={styles.banner}/>
                     </View>
-                </Modal>
-
-                <View style={styles.header}>
-                    <Image source={require('../img/facebookBanner.jpg')} style={styles.banner}/>
-                </View>
+                    <View style={styles.main}>
 
 
-                <View style={styles.main}>
+                        <View style={styles.languages}>
 
-
-                    <View style={styles.languages}>
-
-                        <TouchableOpacity onPress={() =>  this.changeLanguage('Indonesia') }>
-                            <Text style={styles.languageText}>Indonesia</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={() =>  this.changeLanguage('English') }>
-                            <Text style={styles.languageText}>English</Text>
-                        </TouchableOpacity>
-                        <TouchableHighlight onPress={() => this.setModalVisible(true)}>
-                            <Text style={styles.languageText}>Others</Text>
-                        </TouchableHighlight>
-                        
-                    </View>
-                    
-                    <View style={styles.formWrapper}>
-                        <TextInput placeholder={this.state.inputEmail} placeholderTextColor='#aeaeae' underlineColorAndroid="lightblue" style={styles.textInput}/>
-                        <TextInput placeholder={this.state.inputPassword} placeholderTextColor='#aeaeae' secureTextEntry={true} underlineColorAndroid="lightblue" style={styles.textInput}/>
-                    </View>
-
-                    <View style={{marginTop:10}}>
-                        <Button onPress={() => this.goToScreen('Home')}  title={this.state.buttonLogin} style={styles.button} />
-                    </View>
-
-                    <View>
-                        <Text style={[styles.link,styles.center]}>{this.state.textForgottenPassword}</Text>
-                    </View>
-
-                    <View style={styles.textOrWrapper}>
-
-                        <View style={styles.hr}/>
-                        <View><Text>{this.state.textOr}</Text></View>
-                        <View style={styles.hr}/>
-
-                    </View>
-                    
-                    <View>
-                        <View style={styles.width80}>
-                            <Button title={this.state.buttonCreateNewAccount} color="green"/>
+                            <TouchableOpacity onPress={() =>  {} }>
+                                <Text style={styles.languageText}>
+                                    Indonesia
+                                    &nbsp; &bull; &nbsp;
+                                </Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={() => {} }>
+                                <Text style={styles.languageText}>
+                                    English
+                                    &nbsp; &bull; &nbsp;
+                                </Text>
+                            </TouchableOpacity>
+                            <TouchableHighlight onPress={() => {} }>
+                                <Text style={styles.languageText}>
+                                    Others
+                                </Text>
+                            </TouchableHighlight>
+                            
                         </View>
-                    </View>
+                        
 
-                </View>               
+                        <View style={styles.formWrapper}>
+                            <TextInput placeholder={"Email or Phone number"}
+                                    placeholderTextColor='#aeaeae' 
+                                    underlineColorAndroid="lightblue" 
+                                    style={styles.textInput}
+                                    onChangeText={
+                                        (text) => {
+                                            this.setState({
+                                                inputEmail : text
+                                            })
+                                        }
+                                    }/>
+                            <TextInput placeholder={"Password"} 
+                                    placeholderTextColor='#aeaeae' 
+                                    secureTextEntry={true} 
+                                    underlineColorAndroid="lightblue" 
+                                    style={styles.textInput}
+                                    onChangeText={
+                                            (text) => {
+                                                this.setState({
+                                                    inputPassword : text
+                                                })
+                                            }
+                                    }/>
+                        </View>
+
+
+                        <View style={{marginTop:10}}>
+                            <Button onPress={this.handleLogin}  title="Login" style={styles.button} />
+                        </View>
+
+                        <View>
+                            <Text style={[styles.link,styles.center]}>{"forgotten password?"}</Text>
+                        </View>
+
+                        <View style={styles.textOrWrapper}>
+
+                            <Text style={styles.hr}/>
+                            <Text>{"Or"}</Text>
+                            <Text style={styles.hr}/>
+
+                        </View>
+                        
+                        <View>
+                            <View style={styles.width80}>
+                                <Button title={"Create New Account"} color="green"/>
+                            </View>
+                        </View>
+
+                    </View>               
+                </ScrollView>
 
             </View>
         );

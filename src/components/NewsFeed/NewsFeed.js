@@ -5,14 +5,19 @@ import {
   StyleSheet,
   Image,
 } from 'react-native';
+import { Navigation } from 'react-native-navigation';
 
 import NewsFeedHeader from './NewsFeedHeader';
 import NewsFeedBody from './NewsFeedBody';
 import NewsFeedFooter from './NewsFeedFooter';
 
 class NewsFeed extends Component{
+    constructor(){
+      super();
+    }
     render()
     {
+      const componentId = this.props.componentId;
         return(
             <View>
               {
@@ -22,18 +27,23 @@ class NewsFeed extends Component{
       
                         <View style={styles.newsFeedItems}>
       
-                          <NewsFeedHeader profileFoto={NewsFeed.profileFoto}
+                          <NewsFeedHeader id={NewsFeed.id}
+                                          profileFoto={NewsFeed.profileFoto}
                                           name={NewsFeed.name}
                                           timestamp={NewsFeed.timestamp}
-                                          group={NewsFeed.group}    
+                                          group={NewsFeed.group}   
+                                          componentId={componentId} 
                           />
 
                           <NewsFeedBody content={NewsFeed.content}
                                         foto={NewsFeed.foto}
-                                        response={NewsFeed.response}
+                                        componentId={componentId} 
                                         />  
 
-                          <NewsFeedFooter response={NewsFeed.response} />           
+                          <NewsFeedFooter response={NewsFeed.response}
+                                          comments={NewsFeed.comments}
+                                          componentId={componentId}
+                                          />           
                         
 						            </View>
                       </View>

@@ -3,15 +3,36 @@
     "id" : 1,
     "name": "Aden Trisna Daud Kurnia",
     "profileFoto": "https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg",
-    "timestamp": "2 hrs",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,",
+    "timestamp": "2 hours ago",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit dolor voluptatibus, quaerat nostrum ipsa excepturi. Delectus iste quibusdam, ex, nulla sed, mollitia quis dolorem voluptatem omnis eligendi numquam facere eum?,Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit dolor voluptatibus, quaerat nostrum ipsa excepturi. Delectus iste quibusdam, ex, nulla sed, mollitia quis dolorem voluptatem omnis eligendi numquam facere eum?",
     "foto": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Evolution_of_a_Tornado.jpg/500px-Evolution_of_a_Tornado.jpg",
     "response" : [
         {"count" : 57, "name" : "like1", "type" : "antdesign", "color": "#3498db"},
         {"count" : 36, "name" : "heart", "type" : "material-community", "color": "#e74c3c"},
         {"count" : 40, "name" : "emoticon-excited", "type" : "material-community", "color": "#f1c40f"},
         {"count" : 12, "name" : "emoticon-sad", "type" : "material-community", "color": "#f1c40f"},
-        {"count" : 400, "name" : "emoticon-angry", "type" : "material-community", "color": "#e74c3c"}
+        {"count" : 400, "name" : "emoticon-angry", "type" : "material-community", "color": "#e74c3c"} 
+        ],
+        "comments" : [
+            {"user_id" : 7, "name" : "Ihsan", "timestamp" : "1 hours ago", "content" : "hahahahah", "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Evolution_of_a_Tornado.jpg/500px-Evolution_of_a_Tornado.jpg",
+                "response" : [],
+                "reply" : []
+            },
+            
+            {"user_id" : 6, "name" : "Aji", "timestamp" : "1 hours ago", "content" : "Hohoho","avatar": "https://c-sf.smule.com/sf/s91/arr/37/d5/fafaff41-91f7-4a58-9489-8bf18354172c.jpg",
+                "response" : [],
+                "reply" : []
+            },
+            
+            {"user_id" : 5,"avatar": "https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg", "name" : "Rahardian", "timestamp" : "1 hours ago", "content" : "heheheheh",
+                "response" : [],
+                "reply" : []
+            },
+            
+            {"user_id" : 8, "avatar": "https://secure.gravatar.com/avatar/24003f7e50facf623e4d4327b8b5c9fd?s=96&d=mm&r=g", "name" : "Candra", "timestamp" : "1 hours ago", "content" : "Awokwokwokwokwok",
+                "response" : [],
+                "reply" : []
+            }
         ]
     },
     {
@@ -19,7 +40,7 @@
     "name": "Feri",
     "profileFoto": "http://lsimfkub.ub.ac.id/wp-content/uploads/2015/09/public-relations-icon.png",
     "group" : "Arkademy Batch 10",
-    "timestamp": "2 hrs",
+    "timestamp": "2 hours ago",
     "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,",
     "foto": "",
     "response" : [
@@ -29,15 +50,28 @@
         {"count" : 21, "name" : "emoticon-sad", "type" : "material-community", "color": "#f1c40f"},
         {"count" : 7, "name" : "emoticon-angry", "type" : "material-community", "color": "#e74c3c"}
         ],
-    "comments" : [
-        {"name" : "ihsan"}
-    ]
+        "comments" : [
+            {"user_id" : 3,"avatar": "https://cdn-images-1.medium.com/max/672/0*Rb88ivTuqQAvWJEa.png","name" : "Aqil", "timestamp" : "1 hours ago", "content" : "hmmm",
+                "response" : [],
+                "reply" : []
+            },
+            
+            {"user_id" : 5,"avatar": "https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg","name" : "Rahardian", "timestamp" : "1 hours ago", "content" : "heheheheh",
+                "response" : [],
+                "reply" : []
+            },
+            
+            {"user_id" : 8, "avatar": "https://secure.gravatar.com/avatar/24003f7e50facf623e4d4327b8b5c9fd?s=96&d=mm&r=g","name" : "Candra", "timestamp" : "1 hours ago", "content" : "Awokwokwokwokwok",
+                "response" : [],
+                "reply" : []
+            }
+        ]
     },
     {
     "id" : 2,
     "name": "Aqil",
     "profileFoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShQY2HK02e6OjKuBCcYhyYhiCZBNtmuJ19ua-OYRq0eCrnijRh",
-    "timestamp": "2 hrs",
+    "timestamp": "2 hours ago",
     "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,",
     "foto": "",
     "response" : [
@@ -46,13 +80,32 @@
         {"count" : 22,"name" : "emoticon-excited", "type" : "material-community", "color": "#f1c40f"},
         {"count" : 8, "name" : "emoticon-sad", "type" : "material-community", "color": "#f1c40f"},
         {"count" : 12, "name" : "emoticon-angry", "type" : "material-community", "color": "#e74c3c"}
+        ],
+        "comments" : [
+            {"user_id" : 3,"avatar": "https://cdn-images-1.medium.com/max/672/0*Rb88ivTuqQAvWJEa.png","name" : "Aqil", "timestamp" : "1 hours ago", "content" : "sa ae",
+                "response" : [
+                    {"count" : 1, "name" : "like1", "type" : "antdesign", "color": "#3498db"},
+                    {"count" : 32,"name" : "heart", "type" : "material-community", "color": "#e74c3c"}
+                ],
+                "reply" : []
+            },
+            {"user_id" : 5,"avatar": "https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg","name" : "Rahardian", "timestamp" : "1 hours ago", "content" : "Lah komen status sendiri",
+                "response" : [],
+                "reply" : [
+                    {"user_id" : 3,"avatar": "https://cdn-images-1.medium.com/max/672/0*Rb88ivTuqQAvWJEa.png","name" : "Aqil", "timestamp" : "1 hours ago", "content" : "serah gue dong"}
+                ]
+            },
+            {"user_id" : 8, "avatar": "https://secure.gravatar.com/avatar/24003f7e50facf623e4d4327b8b5c9fd?s=96&d=mm&r=g","name" : "Candra", "timestamp" : "1 hours ago", "content" : "Awokwokwokwokwok",
+                "response" : [],
+                "reply" : []
+            }
         ]
     },
     {
     "id" : 3,
     "name": "Ari",
     "profileFoto": "https://cdn131.picsart.com/284121909010201.jpg?c256x256",
-    "timestamp": "2 hrs",
+    "timestamp": "2 hours ago",
     "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,",
     "foto": "https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg",
     "response" : [
@@ -61,13 +114,14 @@
         {"count" : 23,"name" : "emoticon-excited", "type" : "material-community", "color": "#f1c40f"},
         {"count" : 32, "name" : "emoticon-sad", "type" : "material-community", "color": "#f1c40f"},
         {"count" : 12, "name" : "emoticon-angry", "type" : "material-community", "color": "#e74c3c"}
-        ]
+        ],
+        "comments" : []
     },
     {
     "id" : 4,
     "name": "Rahardian",
     "profileFoto": "https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg",
-    "timestamp": "2 hrs",
+    "timestamp": "2 hours ago",
     "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,",
     "foto": "http://lsimfkub.ub.ac.id/wp-content/uploads/2015/09/public-relations-icon.png",
     "response" : [
@@ -76,6 +130,27 @@
         {"count" : 4,"name" : "emoticon-excited", "type" : "material-community", "color": "#f1c40f"},
         {"count" : 12, "name" : "emoticon-sad", "type" : "material-community", "color": "#f1c40f"},
         {"count" : 16, "name" : "emoticon-angry", "type" : "material-community", "color": "#e74c3c"}
+        ],
+        "comments" : [
+            {"user_id" : 10,"avatar" : "https://kucingpedia.com/wp-content/uploads/2017/11/cara-mengobati-kucing-yang-demam.jpg","name" : "cokro", "timestamp" : "1 hours ago", "content" : "hmm",
+                "response" : [],
+                "reply" : []
+            },
+            
+            {"user_id" : 11,"avatar" : "https://em.wattpad.com/39d062d53938df2658d57d49fa2079148ea8d0e5/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f5432796c61566b4f3254784d2d673d3d2d3439343738323235312e313466653961333034663231663139653632363731323235313330342e6a7067?s=fit&w=720&h=720","name" : "jikra", "timestamp" : "1 hours ago", "content" : "eeeee",
+                "response" : [],
+                "reply" : []
+            },
+            
+            {"user_id" : 12, "avatar" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEvWDM6RzKmZKzYgZTnWYyhXwxmivwzkVYZKntXMFFUrN1w78vqw","name" : "kodam", "timestamp" : "1 hours ago", "content" : "haha",
+                "response" : [],
+                "reply" : []
+            },
+            
+            {"user_id" : 8, "avatar": "https://secure.gravatar.com/avatar/24003f7e50facf623e4d4327b8b5c9fd?s=96&d=mm&r=g","name" : "Candra", "timestamp" : "1 hours ago", "content" : "Awokwokwokwokwok",
+                "response" : [],
+                "reply" : []
+            }
         ]
     }
 ]

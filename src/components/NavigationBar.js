@@ -37,22 +37,22 @@ class NavigationBar extends Component{
             </TouchableOpacity>
           </View>
           <View style={styles.menu}>
-            <TouchableOpacity onPress={() => this.goToScreen('Home')}>
+            <TouchableOpacity onPress={() => this.goToScreen('PageNotFound')}>
               <Image source={friends} style={styles.icon}/>
             </TouchableOpacity>                                           
           </View>
           <View style={styles.menu}>
-            <TouchableOpacity onPress={() => this.goToScreen('Home')}>            
+            <TouchableOpacity onPress={() => this.goToScreen('PageNotFound')}>            
               <Image source={fbVideo} style={styles.icon}/>
             </TouchableOpacity>
           </View>
           <View style={styles.menu}>                                           
-            <TouchableOpacity onPress={() => this.goToScreen('Home')}>
+            <TouchableOpacity onPress={() => this.goToScreen('PageNotFound')}>
               <Image source={userIcon} style={styles.icon}/>
             </TouchableOpacity>                                           
           </View>
           <View style={styles.menu}>                                           
-            <TouchableOpacity onPress={() => this.goToScreen('Home')}>
+            <TouchableOpacity onPress={() => this.goToScreen('PageNotFound')}>
               <Image source={notification} style={styles.icon}/>
             </TouchableOpacity>                                           
           </View>
