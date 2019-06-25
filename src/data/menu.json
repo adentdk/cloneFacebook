@@ -19,7 +19,7 @@
             "subtitle" : "88 updates",
             "icon" : "flag",
             "type" : "font-awesome",
-            "action" : ""
+            "action" : "Page"
         },
         {
             "title" : "Friends",
@@ -33,42 +33,42 @@
             "subtitle" : "",
             "icon" : "users",
             "type" : "font-awesome",
-            "action" : ""
+            "action" : "Group"
         },
         {
             "title" : "Wacthed Video",
             "subtitle" : "476 request",
             "icon" : "airplay",
             "type" : "material",
-            "action" : ""
+            "action" : "Video"
         },
         {
             "title" : "Event",
             "subtitle" : "",
             "icon" : "calendar",
             "type" : "antdesign" ,
-            "action" : ""
+            "action" : "Event"
         },
         {
             "title" : "Memories",
             "subtitle" : "so many memories",
             "icon" : "history",
             "type" : "font-awesome" ,
-            "action" : ""
+            "action" : "Memories"
         },
         {
             "title" : "Saved",
             "subtitle" : "46 new",
             "icon" : "bookmark",
             "type" : "font-awesome", 
-            "action" : ""
+            "action" : "Saved"
         },
         {
             "title" : "Log out",
             "subtitle" : "",
             "icon" : "logout",
             "type" : "material-community",
-            "action" : ""
+            "action" : "Logout"
         }
     ]
 }   

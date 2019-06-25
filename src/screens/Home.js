@@ -5,7 +5,10 @@ import {
   TouchableOpacity,
   StyleSheet,
   ScrollView,
+  AsyncStorage
 } from 'react-native';
+
+import axios from 'axios';
 
 import Header from '../components/Header';
 import NavigationBar from '../components/NavigationBar';
@@ -20,12 +23,69 @@ class Home extends Component {
     super();
     this.state = {
       story : require('../data/story.json'),
-      newsFeed : require('../data/newsFeed.json')
+      newsFeed : require('../data/newsFeed.json'),
+	  token : '',
+	  self_stories : [],
+      friend_stories: [],
+      feeds: [],
     }
-  }  
+
+    AsyncStorage.getItem('jwt', (error, result) => {
+		if(result != null) {
+			this.setState({
+			  token : result
+			})
+		}else{
+			Navigation.popToRoot(this.props.componentId);
+		}
+  });
+  }
+
+  componentDidMount = async() =>{
+	const token = await AsyncStorage.getItem('jwt');
+    const config = {
+      headers : {
+        "Authorization" : `jwt ${token}`
+      }
+	}
+	
+    axios.get('http://192.168.0.18:3000/api/stories/friends',config)
+    .then(response => {
+      this.setState({
+        friend_stories : response.data
+      });
+    })
+    .catch(err => {
+      console.log("error : ",err);
+	})
+	
+	axios.get('http://192.168.0.18:3000/api/stories/self',config)
+    .then(response => {
+      this.setState({
+        self_stories : response.data
+      });
+    })
+    .catch(err => {
+      console.log("error : ",err);
+	})
+	
+	axios.get('http://192.168.0.18:3000/api/feeds',config)
+    .then(response => {
+      this.setState({
+        feeds : response.data
+      });
+    })
+    .catch(err => {
+      console.log("error : ",err);
+	})
+  }
+  
   render(){
-    const componentId = this.props.componentId;
-    
+	const componentId = this.props.componentId;
+	
+	console.log(this.state.feeds);
+	
+	
     return (
 
       <View style={styles.container}>
@@ -37,7 +97,13 @@ class Home extends Component {
 
           <FormStatus/>
 
-          <Story data={this.state.story} componentId={componentId}/>
+          <Story data={
+						{
+							self : this.state.self_stories,
+							friends : this.state.friend_stories
+						}
+					  }
+			  componentId={componentId}/>
 
 	
 	        <NewsFeed data={this.state.newsFeed} componentId={componentId}/>

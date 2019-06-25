@@ -43,7 +43,7 @@ class Menu extends Component {
                                       leftAvatar={{ source : { uri : item.avatar} }}
                                       title={item.title}
                                       subtitle={item.subtitle}
-                                      onPress={() => this.goToScreen('Home')}/>
+                                      onPress={() => this.goToScreen(`${item.action}`)}/>
                         )
                     })
                 }
@@ -54,7 +54,7 @@ class Menu extends Component {
                           title={item.title}
                           subtitle={item.subtitle}
                           leftIcon={{ name: item.icon, color: '#3B5999', type: item.type }}
-                          onPress={() => this.goToScreen('Friends')}/>  }
+                          onPress={() => this.goToScreen(`${item.action}`)}/>  }
                         />
                 </ScrollView>
             </View>

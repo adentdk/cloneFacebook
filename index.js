@@ -30,11 +30,6 @@ Navigation.events().registerAppLaunchedListener(() => {
                       name: "Login"
                   }
                 },
-                {
-                  component : {
-                    name: "Home"
-                  }
-                },
               ]
           }
       }

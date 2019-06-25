@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {
-    Alert,
     Text,
     TextInput,
     Button,
@@ -13,13 +12,17 @@ import {
     AsyncStorage
 } from 'react-native';
 import { Navigation } from 'react-native-navigation';
+import AwesomeAlert from 'react-native-awesome-alerts';
+
 import axios from 'axios';
 
 class Login extends Component {
+
     constructor()
     {
         super();
         this.state = {
+            showAlert : false,
             inputEmail :  '',
             inputPassword : ''
         }
@@ -36,46 +39,42 @@ class Login extends Component {
 
     }
 
-    showAlert = () => {
-    Alert.alert(
-        'Alert Title',
-        'My Alert Msg',
-        [
-            {text: 'Ask me later', onPress: () => console.log('Ask me later pressed')},
-            {
-            text: 'Cancel',
-            onPress: () => console.log('Cancel Pressed'),
-            style: 'cancel',
-            },
-            {text: 'OK', onPress: () => console.log('OK Pressed')},
-        ],
-        {cancelable: false},
-        );
-    }
-
     handleLogin = () => {
 
-        axios.post('http://192.168.0.12:3000/auth/signin',{
+        axios.post('http://192.168.0.18:3000/auth/signin',{
             "email" : this.state.inputEmail,
             "password" : this.state.inputPassword
         })
         .then(res => {
-
             const data = res.data.data
-            axios.post("http://192.168.0.12:3000/auth/create/authorization",{
+            axios.post("http://192.168.0.18:3000/auth/create/authorization",{
                 "user_id" : data.id,
                 "name" : data.name,
                 "email" : data.email
             })
             .then(res => {
                 AsyncStorage.setItem('jwt',res.data.data.token);
+                AsyncStorage.setItem('user_id',data.id);
+                Navigation.push(this.props.componentId, {
+                    component : {
+                      name: "Home"
+                    }
+                });
             })
             .catch(err => {
                 console.log(err);
+                
+                this.setState({
+                    showAlert: true
+                })
             })
         })
         .catch(err => {
-            console.log("ERROR :",err);
+            console.log(err);
+            
+            this.setState({
+                showAlert: true
+            })
         })
     }
 
@@ -171,7 +170,29 @@ class Login extends Component {
 
                     </View>               
                 </ScrollView>
-
+                <AwesomeAlert
+                    show={this.state.showAlert}
+                    showProgress={false}
+                    title="AwesomeAlert"
+                    message="I have a message for you!"
+                    closeOnTouchOutside={true}
+                    closeOnHardwareBackPress={true}
+                    showCancelButton={true}
+                    showConfirmButton={true}
+                    cancelText="No, cancel"
+                    confirmText="Yes, delete it"
+                    confirmButtonColor="#DD6B55"
+                    onCancelPressed={() => {
+                        this.setState({
+                            showAlert: false
+                        })
+                    }}
+                    onConfirmPressed={() => {
+                        this.setState({
+                            showAlert: false
+                        })
+                    }}
+                    />
             </View>
         );
     }

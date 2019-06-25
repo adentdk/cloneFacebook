@@ -10,6 +10,7 @@ import {
 
 class Story extends Component {
     render(){
+      let {friends, self } = this.props.data
       return(
             <ScrollView horizontal={true}>
 
@@ -18,7 +19,7 @@ class Story extends Component {
                     <View style={styles.storyItems}>
 
 
-                          <Image source={{uri : 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg' }}
+                          <Image source={{uri : `http://192.168.0.18:3000/images/users/${self.user_avatar}` }}
                                style={styles.storyFoto} />
 
                           <Image source={require('../../img/plus.png')}
@@ -31,19 +32,33 @@ class Story extends Component {
 
                     </View>
                     </TouchableOpacity>
+                    <TouchableOpacity>  
+                    <View style={styles.storyItems}>
+                      <Image source={{uri : `http://192.168.0.18:3000/images/stories/${self.media}` }}
+                            style={styles.storyFoto} />
+
+                      <Image source={{uri : `http://192.168.0.18:3000/images/users/${self.user_avatar}`  }}
+                            style={[styles.storyProfileFoto]}/>
+                      <Text style={styles.storyTitle}>
+                        {self.name}
+                      </Text>
+                    </View>
+                    </TouchableOpacity>
+                    
 
                     {
-                      this.props.data.map(function(item, index){
-                          return (
+                      friends.map(function(friend, index){
+                        
+                            return (
                             <TouchableOpacity key={index}>
                               <View style={styles.storyItems}>
-                                <Image source={{uri : item.statusFoto }} style={styles.storyFoto} />
+                                <Image source={{uri :  `http://192.168.0.18:3000/images/stories/${friend.media}` }} style={styles.storyFoto} />
                                 
                                 <TouchableOpacity>
-                                  <Image source={{uri : item.profileFoto }} style={[styles.storyProfileFoto,styles.borderBlue]}/>
+                                  <Image source={{uri :  `http://192.168.0.18:3000/images/users/${friend.user_avatar}` }} style={[styles.storyProfileFoto,styles.borderBlue]}/>
                                 </TouchableOpacity>
 
-                                <Text style={styles.storyTitle}>{item.name}</Text>
+                                <Text style={styles.storyTitle}>{friend.user_name}</Text>
                               </View>
                             </TouchableOpacity>
                           )
