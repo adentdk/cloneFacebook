@@ -12,7 +12,13 @@ class Logout extends Component {
         AsyncStorage.clear();
     }
     componentDidMount(){
-        Navigation.popToRoot(this.props.componentId);
+        Navigation.setStackRoot(this.props.componentId, [
+            {
+            component: {
+                  name: 'Login'
+            }
+          }
+        ]);
     }
     render() {
         return(

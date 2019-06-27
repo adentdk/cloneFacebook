@@ -47,18 +47,17 @@ class DetailsFeed extends Component {
     render() {
         return(
             <View style={{padding:3,backgroundColor:'#fff',flex:1}}>
-                <Text>{this.state.user.name}</Text>
-                {/* <ScrollView>
+                <ScrollView>
 
-                    <Header name={this.state.feed.user.name}
+                    <Header name={this.state.user.name}
                             componentId={this.props.componentId}
                     />
                    
                     <View style={{marginTop:10}}>
 
-                        <NewsFeedHeader profileFoto={this.state.feed.user.avatar}
-                                        name={this.state.feed.user.name}
-                                        timestamp={this.state.feed.createAt}
+                        <NewsFeedHeader profileFoto={this.state.user.avatar}
+                                        name={this.state.user.name}
+                                        timestamp={this.state.feed.createdAt}
                                         group={this.state.feed.from_group}   
                                         componentId={this.props.componentId} 
                         />
@@ -68,19 +67,19 @@ class DetailsFeed extends Component {
                             <StatusFoto source={this.state.feed.media} />
                         </View>
                     
-                        <NewsFeedFooter comments={this.state.feed.comments}
+                        {/* <NewsFeedFooter comments={this.state.feed.comments}
                                         response={this.state.feed.response}
                                         componentId={this.props.componentId}
-                        />
+                        /> */}
                     </View>
 
                     <View>
-                        <FlatList keyExtractor={(item,index)=> index.toString()}
+                        {/* <FlatList keyExtractor={(item,index)=> index.toString()}
                                   data={this.state.feed.comments}
-                                  renderItem={({item}) => <Comments data={item} />}  />
+                                  renderItem={({item}) => <Comments data={item} />}  /> */}
                     </View>
                     <View style={{height:20}} />
-                </ScrollView> */}
+                </ScrollView>
                 
                 <View style={{flexDirection:'row',alignItems:'center'}}>
                     <Icon name="camera" type="simple-line-icon" size={30} color="#ddd" containerStyle={{width:40,padding:5}}/>
@@ -100,7 +99,9 @@ class Header extends Component {
         Navigation.pop(this.props.componentId);
     }
     render(){
-        let name = this.props.name.split(' ').slice(0,1);
+        let name = this.props.name;
+        name += " name";
+        name = name.split(' ').slice(0,1);
         return(
             <View>
                  <ListItem

@@ -56,11 +56,13 @@ class Login extends Component {
             .then(res => {
                 AsyncStorage.setItem('jwt',res.data.data.token);
                 AsyncStorage.setItem('id',data.id);
-                Navigation.push(this.props.componentId, {
-                    component : {
-                      name: "Home"
-                    }
-                });
+                Navigation.setStackRoot(this.props.componentId, [
+                    {
+                    component: {
+                          name: 'Home',
+                        }
+                  }
+                ]);
             })
             .catch(err => {
                 console.log(err);

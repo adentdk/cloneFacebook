@@ -12,7 +12,7 @@ class NewsFeedBody extends Component {
         const {content, foto} = this.props;
         return (
             <View style={styles.newsFeedItemsBody}>
-                   <Text>{content}</Text>
+                    <Content text={content} />
                     <StatusFoto source={foto} />
             </View>
           
@@ -42,6 +42,16 @@ export class StatusFoto extends Component {
                 {
                     this._cekFoto(this.props.source)
                 }
+            </View>
+        )
+    }
+}
+
+export class Content extends Component {
+    render(){
+        return(
+            <View>
+                <Text>{this.props.text}</Text>
             </View>
         )
     }
