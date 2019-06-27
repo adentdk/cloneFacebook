@@ -6,6 +6,7 @@ import Logout from '../screens/Logout';
 import Home from '../screens/Home';
 import Menu from '../screens/Menu';
 import Friends from '../screens/Friends';
+import CreateNewFeed from '../screens/CreateNewFeed';
 import DetailsFeed from '../screens/DetailsFeed';
 import Error404 from '../screens/Error404';
 
@@ -16,6 +17,7 @@ export function registerScreens() {
     Navigation.registerComponent(`Home`, () => Home);
     Navigation.registerComponent(`Menu`, () => Menu);
     Navigation.registerComponent(`Friends`, () => Friends);
+    Navigation.registerComponent(`CreateNewFeed`, () => CreateNewFeed);
     Navigation.registerComponent(`DetailsFeed`, () => DetailsFeed);
     Navigation.registerComponent(`PageNotFound`, () => Error404);
 }

@@ -15,9 +15,16 @@ class NewsFeed extends Component{
     constructor(){
       super();
     }
+
+    _refresh = () => {
+      this.props.refresh()
+    }
+
     render()
     {
       const componentId = this.props.componentId;
+      const user_id = this.props.user_id;
+      const refresh = this._refresh;
         return(
             <View>
               {
@@ -28,20 +35,30 @@ class NewsFeed extends Component{
                         <View style={styles.newsFeedItems}>
       
                           <NewsFeedHeader id={NewsFeed.id}
-                                          profileFoto={NewsFeed.profileFoto}
+                                          user_id={NewsFeed.user_id}
+                                          myId={user_id}
+                                          profileFoto={NewsFeed.avatar}
                                           name={NewsFeed.name}
-                                          timestamp={NewsFeed.timestamp}
-                                          group={NewsFeed.group}   
+                                          timestamp={NewsFeed.createdAt}
+                                          group={NewsFeed.from_group}   
                                           componentId={componentId} 
+                                          refresh={refresh}
                           />
 
                           <NewsFeedBody content={NewsFeed.content}
-                                        foto={NewsFeed.foto}
+                                        foto={NewsFeed.media}
                                         componentId={componentId} 
                                         />  
 
-                          <NewsFeedFooter response={NewsFeed.response}
-                                          comments={NewsFeed.comments}
+                          <NewsFeedFooter response={{
+                                            like : NewsFeed.like_count,
+                                            super : NewsFeed.super_count,
+                                            haha : NewsFeed.haha_count,
+                                            wow : NewsFeed.wow_count,
+                                            sad : NewsFeed.sad_count,
+                                            angry : NewsFeed.angry_count,
+                                          }}
+                                          comments={[{n:12,m:12,o:12}]}
                                           componentId={componentId}
                                           />           
                         

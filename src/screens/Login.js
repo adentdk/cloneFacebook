@@ -26,7 +26,9 @@ class Login extends Component {
             inputEmail :  '',
             inputPassword : ''
         }
+    }
 
+    componentDidMount(){
         AsyncStorage.getItem('jwt', (error, result) => {
             if(result != null) {
                 Navigation.push(this.props.componentId, {
@@ -36,7 +38,6 @@ class Login extends Component {
                 });
             }
         });
-
     }
 
     handleLogin = () => {
@@ -54,7 +55,7 @@ class Login extends Component {
             })
             .then(res => {
                 AsyncStorage.setItem('jwt',res.data.data.token);
-                AsyncStorage.setItem('user_id',data.id);
+                AsyncStorage.setItem('id',data.id);
                 Navigation.push(this.props.componentId, {
                     component : {
                       name: "Home"
@@ -173,25 +174,10 @@ class Login extends Component {
                 <AwesomeAlert
                     show={this.state.showAlert}
                     showProgress={false}
-                    title="AwesomeAlert"
-                    message="I have a message for you!"
+                    title="Login Failed"
+                    message="make sure your email and your password is correct"
                     closeOnTouchOutside={true}
                     closeOnHardwareBackPress={true}
-                    showCancelButton={true}
-                    showConfirmButton={true}
-                    cancelText="No, cancel"
-                    confirmText="Yes, delete it"
-                    confirmButtonColor="#DD6B55"
-                    onCancelPressed={() => {
-                        this.setState({
-                            showAlert: false
-                        })
-                    }}
-                    onConfirmPressed={() => {
-                        this.setState({
-                            showAlert: false
-                        })
-                    }}
                     />
             </View>
         );

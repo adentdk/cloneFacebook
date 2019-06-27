@@ -12,7 +12,7 @@ class Story extends Component {
     render(){
       let {friends, self } = this.props.data
       return(
-            <ScrollView horizontal={true}>
+            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
 
                 <View style={styles.story}>
                     <TouchableOpacity>  

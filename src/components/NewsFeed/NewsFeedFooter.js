@@ -25,7 +25,7 @@ class NewsFeedFoooter extends Component {
         }
     }
     _setTotalResponse = () => {
-        return this.props.response.reduce((a,b) => a + b.count,0);
+        return  this.props.response.like + this.props.response.super + this.props.response.haha + this.props.response.wow + this.props.response.angry + this.props.response.sad
     }
     _setTotalComments = () => {
         let comments = this.props.comments;
@@ -117,7 +117,11 @@ class NewsFeedFoooter extends Component {
             <View>
                 <View style={{flexDirection:'row'}}>
                     <View style={{flexDirection:"row",flex:1}}>
-                        <BodyBottom response={this.state.response} comments={this.state.comments} />
+                        <Icon name="like1"
+                            type="antdesign"
+                            color="#3498db"
+                            size={18}
+                        />
                         <Text>{this.state.totalResponse}</Text>
                     </View>
                     <View style={{flex:1}}>
@@ -187,31 +191,6 @@ class NewsFeedFoooter extends Component {
 }
 
 export default NewsFeedFoooter;
-
-class BodyBottom extends  Component {
-    render() {
-        let data = this.props.response;
-        data = data.sort((a, b) => b.count - a.count);
-        let topThree = data.slice(0,3);
-        return(
-            <View style={{flexDirection:"row"}}>
-                {                
-                    topThree.map(function(response, index){
-                        return(
-                            <Icon name={response.name}
-                                  type={response.type} 
-                                  color={response.color} 
-                                  size={20} 
-                                  key={index} />
-                        )
-                    })
-                }
-            </View>
-        )
-
-    }
-}
-
 const styles = StyleSheet.create({
     
   newsFeedItemsFooter: {

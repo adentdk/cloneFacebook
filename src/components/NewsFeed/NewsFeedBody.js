@@ -12,7 +12,7 @@ class NewsFeedBody extends Component {
         const {content, foto} = this.props;
         return (
             <View style={styles.newsFeedItemsBody}>
-                    <Content text={content} />
+                   <Text>{content}</Text>
                     <StatusFoto source={foto} />
             </View>
           
@@ -22,48 +22,12 @@ class NewsFeedBody extends Component {
 
 export default NewsFeedBody;
 
-export class Content extends Component {
-
-    constructor() {
-        super();
-        this.state = {
-            fullContent : '',
-            content : '',
-            btnViewDetails : true,
-        }
-    }
-
-    componentWillMount(){
-        content = (this.props.text.length  > 128) ? this.props.text.slice(0,128) + "...." : this.props.text;
-        this.setState({
-            fullContent : this.props.text,
-            content : content
-        })
-    }
-
-    _viewDetails = () => {
-        this.setState({
-            content : fullContent
-        })
-    }
-
-    render(){
-        return(
-            <View>
-                <Text>{this.state.content}</Text>
-                <TouchableWithoutFeedback onPress={() => {}} style={{display:'none'}}>
-                    <Text style={{color:"#aeaeae"}}>view more</Text>
-                </TouchableWithoutFeedback>
-            </View>
-        )
-    }
-}
 export class StatusFoto extends Component {
     _cekFoto = (img) => {
-        if(img != ''){
+        if(img != null){
             return(
                 <View>
-                    <Image source={{uri : img}} style={styles.statusFoto} />
+                    <Image source={{uri : `http://192.168.0.18:3000/images/feeds/${img}`}} style={styles.statusFoto} />
                 </View>
             )
         }else{

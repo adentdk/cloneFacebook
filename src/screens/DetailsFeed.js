@@ -6,9 +6,12 @@ import {
     StyleSheet,
     ScrollView,
     TextInput,
+    AsyncStorage
 } from 'react-native';
 import { Navigation } from 'react-native-navigation';
 import { ListItem,Icon } from 'react-native-elements';
+
+import axios from 'axios';
 
 import NewsFeedHeader from '../components/NewsFeed/NewsFeedHeader';
 import {Content,StatusFoto} from '../components/NewsFeed/NewsFeedBody';
@@ -18,47 +21,67 @@ class DetailsFeed extends Component {
     constructor(){
         super();
         this.state = {
-            feeds : require('../data/newsFeed.json')
+            feed : {},
+            user : {}
         }
     }
+
+    componentDidMount = async () => {
+        const token = await AsyncStorage.getItem('jwt');
+        const config = {
+            headers : {
+                "Authorization" : `jwt ${token}`
+          }
+        }
+        const post_id = this.props.post_id;
+        axios.get(`http://192.168.0.18:3000/api/feeds/details/${post_id}`,
+        config)
+        .then( async result => {
+            this.setState({
+                feed : result.data,
+                user : result.data.user
+            })
+        })
+    }
+
     render() {
-        let id = this.props.data;
-        let feed = this.state.feeds.find(feed => feed.id == id);
         return(
             <View style={{padding:3,backgroundColor:'#fff',flex:1}}>
-                <ScrollView>
+                <Text>{this.state.user.name}</Text>
+                {/* <ScrollView>
 
-                    <Header name={feed.name}
+                    <Header name={this.state.feed.user.name}
                             componentId={this.props.componentId}
                     />
                    
                     <View style={{marginTop:10}}>
 
-                        <NewsFeedHeader profileFoto={feed.profileFoto}
-                                        name={feed.name}
-                                        timestamp={feed.timestamp}
-                                        group={feed.group}   
+                        <NewsFeedHeader profileFoto={this.state.feed.user.avatar}
+                                        name={this.state.feed.user.name}
+                                        timestamp={this.state.feed.createAt}
+                                        group={this.state.feed.from_group}   
                                         componentId={this.props.componentId} 
                         />
 
                         <View style={[styles.newsFeedItemsBody]}>
-                            <Content text={feed.content} />
-                            <StatusFoto source={feed.foto} />
+                            <Content text={this.state.feed.content} />
+                            <StatusFoto source={this.state.feed.media} />
                         </View>
                     
-                        <NewsFeedFooter comments={feed.comments}
-                                        response={feed.response}
+                        <NewsFeedFooter comments={this.state.feed.comments}
+                                        response={this.state.feed.response}
                                         componentId={this.props.componentId}
                         />
                     </View>
 
                     <View>
                         <FlatList keyExtractor={(item,index)=> index.toString()}
-                                  data={feed.comments}
+                                  data={this.state.feed.comments}
                                   renderItem={({item}) => <Comments data={item} />}  />
                     </View>
                     <View style={{height:20}} />
-                </ScrollView>
+                </ScrollView> */}
+                
                 <View style={{flexDirection:'row',alignItems:'center'}}>
                     <Icon name="camera" type="simple-line-icon" size={30} color="#ddd" containerStyle={{width:40,padding:5}}/>
                     <TextInput placeholder="Write a comment ..." 

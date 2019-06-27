@@ -22,23 +22,28 @@ class Home extends Component {
   constructor(){
     super();
     this.state = {
-      story : require('../data/story.json'),
-      newsFeed : require('../data/newsFeed.json'),
-	  token : '',
-	  self_stories : [],
+      user_id : 0,
+      token : '',
+      self_stories : [],
       friend_stories: [],
       feeds: [],
+      refresh : false
     }
 
     AsyncStorage.getItem('jwt', (error, result) => {
-		if(result != null) {
-			this.setState({
-			  token : result
-			})
-		}else{
-			Navigation.popToRoot(this.props.componentId);
-		}
-  });
+      if(result != null) {
+        this.setState({
+          token : result
+        })
+      }else{
+        Navigation.popToRoot(this.props.componentId);
+      }
+    });
+    AsyncStorage.getItem('id', (error, result) => {
+      this.setState({
+        user_id : result
+      })
+    });
   }
 
   componentDidMount = async() =>{
@@ -47,7 +52,7 @@ class Home extends Component {
       headers : {
         "Authorization" : `jwt ${token}`
       }
-	}
+	  }
 	
     axios.get('http://192.168.0.18:3000/api/stories/friends',config)
     .then(response => {
@@ -57,9 +62,9 @@ class Home extends Component {
     })
     .catch(err => {
       console.log("error : ",err);
-	})
+	  })
 	
-	axios.get('http://192.168.0.18:3000/api/stories/self',config)
+	  axios.get('http://192.168.0.18:3000/api/stories/self',config)
     .then(response => {
       this.setState({
         self_stories : response.data
@@ -67,25 +72,39 @@ class Home extends Component {
     })
     .catch(err => {
       console.log("error : ",err);
-	})
-	
-	axios.get('http://192.168.0.18:3000/api/feeds',config)
-    .then(response => {
-      this.setState({
-        feeds : response.data
-      });
     })
-    .catch(err => {
-      console.log("error : ",err);
-	})
+    
+    axios.get('http://192.168.0.18:3000/api/feeds',config)
+      .then(response => {
+        this.setState({
+          feeds : response.data
+        });
+      })
+      .catch(err => {
+        console.log("error : ",err);
+    })
   }
+
+  _refresh = () => {
+    this.setState({
+      refresh : true
+    })
+  }
+
+  _refreshCek = () => {
+    if(this.state.refresh) {
+      this.componentDidMount();
+      this.setState({
+        refresh : false
+      })
+    }
+  }
+
+  
   
   render(){
-	const componentId = this.props.componentId;
-	
-	console.log(this.state.feeds);
-	
-	
+	  const componentId = this.props.componentId;
+    this._refreshCek()
     return (
 
       <View style={styles.container}>
@@ -95,7 +114,7 @@ class Home extends Component {
 
         <ScrollView>
 
-          <FormStatus/>
+          <FormStatus componentId={componentId} refresh={this._refresh}/>
 
           <Story data={
 						{
@@ -103,10 +122,14 @@ class Home extends Component {
 							friends : this.state.friend_stories
 						}
 					  }
-			  componentId={componentId}/>
+			      componentId={componentId}/>
 
 	
-	        <NewsFeed data={this.state.newsFeed} componentId={componentId}/>
+          <NewsFeed user_id={1} 
+                    data={this.state.feeds} 
+                    response={this.state.newsFeed} 
+                    componentId={componentId}
+                    refresh={this._refresh}/>
 
             <TouchableOpacity>
             <View style={styles.btnLoadMore}>
@@ -116,8 +139,6 @@ class Home extends Component {
 
           <View style={{height:100}}/>
         </ScrollView>
-
-
       </View>        
     );
   }
